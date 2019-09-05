@@ -1,0 +1,75 @@
+# -*- Conf -*-
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	showbranch = auto
+	status = auto
+	ui = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow bold
+	changed = green bold
+	untracked = cyan bold
+
+[core]
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore-rab
+	editor = vim
+	pager = cat
+
+[apply]
+	whitespace = nowarn
+[branch]
+	autosetuprebase = always
+[rerere]
+	enabled = 1
+[log]
+	date = short
+	# date = relative
+[alias]
+	st = status -sb
+	statu = status
+	stats = status
+	statsu = status
+	up = pull
+	ci = commit
+	commi = commit
+	commt = commit
+	commti = commit
+	co = checkout
+	graph = log --graph --oneline --decorate=short --branches='*'
+	#lol = log --graph --pretty=tformat:'%C(yellow)%h%Creset %C(cyan)(%ad)%Creset %C(green)%an%Creset%C(cyan)%C(bold)%d%Creset'
+	lol = log --graph --pretty=tformat:'%C(yellow)%h%Creset %C(cyan)(%ad)%Creset %C(green)%an%C(reset) %s%C(cyan)%C(bold)%d%Creset' --color=always
+	gr = log --graph --pretty=tformat:'%C(yellow)%h%Creset %C(cyan)(%ad)%Creset %C(green)%an%Creset %<(80,trunc)%s%C(cyan)%C(bold)%d%Creset'
+	br = branch
+	df = diff --color-words='[^[:space:]]'
+	diffunpushed = diff @{u}..
+	#sh = show --color-words='[^[:space:]]'
+	sh = show --date=format:'%Y-%m-%d %H:%M:%S' --pretty=tformat:'%C(yellow)%h %C(cyan)%ad %C(green)%aN%C(red)%d %C(reset)%s' --color=always
+	lg = log --name-status --pretty=format:'%C(red)%h%C(reset) %C(yellow)%ad%C(reset) %C(green)%s%C(reset)%n %C(magenta)[%cr]%C(reset) %C(cyan)(%cE)%C(reset)' --color=always
+	lgg = log --date=format:'%Y-%m-%d %H:%M:%S' --pretty=tformat:'%C(yellow)%h %C(cyan)%ad %C(green)%aN%C(red)%d %C(reset)%s' --color=always
+	logfollow = log --name-status --pretty=tformat:'%C(red)%h%C(reset) %C(yellow)%ad%C(reset) %C(green)%s%C(reset)%n %C(magenta)[%cr]%C(reset) %C(cyan)(%cE)%C(reset)' --color=always --follow
+	logunpushed = log ORIG_HEAD^..
+	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+	pend = cherry -v origin/master
+#	prefab = cherry -v origin/fabrication
+	reorder = "!GIT_SEQUENCE_EDITOR=\"sed -i -n 'h;1n;2p;g;p'\" git rebase -i HEAD~2" # Reorder the last two commits
+	patch = am --reject --ignore-whitespace -i
+[format]
+	pretty = '%C(yellow)%h%Creset %C(magenta)%cd%Creset %d %s'
+[push]
+	default = simple
+[http]
+	sslVerify = true
