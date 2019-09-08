@@ -1,5 +1,6 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# ~/.zshrc
+#
+# Configuration file for zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,34 +31,5 @@ setopt no_share_history
 PATH+=:~/toolbox/bash:~/toolbox/python
 
 # Use custom aliases
+source ~/.zsh_aliases
 source ~/.bash_aliases
-
-# Regular aliases
-alias SZ="source ~/.zshrc"
-alias VZ="vim ~/.zshrc"
-alias D="dolphin"
-alias estyle="astyle --style=break --indent=tab --pad-oper --pad-header"
-alias gdiff="git diff"
-
-# https://opensource.com/article/18/9/tips-productivity-zsh
-alias -s {txt,log}=vim # Open files with vim
-
-# Expand certain aliases
-globalias() {
-	if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
-		zle _expand_alias
-		zle expand-word
-	fi
-	zle self-insert
-}
-bindkey " " magic-space # no completion by default
-bindkey "^ " globalias # expand aliases with Ctrl-Space
-
-# Disable shell rerseved words
-#disable -r time # Use time -p instead
-
-# Global aliases
-alias -g G="| grep -E"
-alias -g Gi="| grep -iE"
-alias -g Gr="grep -IrE"
-alias -g TODAY=`date +%Y-%m-%d`
