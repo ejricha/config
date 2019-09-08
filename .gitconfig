@@ -72,3 +72,6 @@
 	default = simple
 [http]
 	sslVerify = true
+[user]
+	email = ejricha+github@gmail.com
+	name = Eric Richardson
