@@ -1,0 +1,58 @@
+" .vimrc.vundle
+"
+" Custom colors and file extension handling
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" BEGIN
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required 
+Plugin 'tpope/vim-fugitive' " plugin on GitHub rep
+Plugin 'ycm-core/YouCompleteMe' " smart auto-completion
+Plugin 'airblade/vim-gitgutter' " shows git changes
+call vundle#end()
+" END
+
+" Required
+filetype plugin indent on  " indent is optional
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" YCM plugin
+let g:ycm_use_clangd = 0 " Use libclang by default, not clangd
+highlight Pmenu ctermfg=black ctermbg=cyan
+
+" ALE plugins
+" Plugins need to be added to runtimepath before helptags can be generated.
+"packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+"silent! helptags ALL
+" Shortcuts
+"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+"nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" Disable ale by default, but keep gitgutter enabled by default
+"let g:ale_enabled = 0
+"let g:gitgutter_enabled = 0
+
+" Integration with git
+"autocmd BufWritePost * GitGutter
+"highlight link GitGutterChangeLine DiffText
+"highlight link GitGutterAddLine DiffAdd
+"highlight link GitGutterChangeLine DiffChange
+"highlight link GitGutterDeleteLine DiffDelete
+"highlight link GitGutterChangeDeleteLine DiffChange
+"highlight GitGutterChangeLine guifg=magenta
+"highlight GitGutterAddLine guifg=cyan
+"highlight GitGutterDeleteLine guifg=red
+"highlight GitGutterChangeDeleteLine guifg=red
+"hi GitGutterAdd        guibg=red guifg=green
+"hi GitGutterAddLine    guibg=#001040

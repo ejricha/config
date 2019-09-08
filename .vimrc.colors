@@ -1,0 +1,24 @@
+" .vimrc.colors
+"
+" Custom colors and file extension handling
+
+" Overrides for certain filetypes
+if has("autocmd")
+  autocmd FileType make set noexpandtab ts=4 st=4 sw=4
+endif
+
+" Treat file extensions a certain way
+autocmd BufRead,BufNewFile *.pldesc set filetype=json
+"autocmd BufRead,BufNewFile .vimrc* set filetype=vimrc
+
+" Show line numbers, with a custom cursor color
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+
+" Use a bright red for Special
+highlight Special term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Red guibg=NONE
+
+" Set the StatusLine
+hi StatusLine cterm=NONE ctermbg=Gray ctermfg=DarkBlue
