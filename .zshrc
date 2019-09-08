@@ -4,10 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="volta"
 #ZSH_THEME="random"
 #ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "spaceship" )
@@ -36,9 +32,12 @@ PATH+=:~/toolbox/bash:~/toolbox/python
 # Use custom aliases
 source ~/.bash_aliases
 
-# Source/edit ~/.zshrc
+# Regular aliases
 alias SZ="source ~/.zshrc"
 alias VZ="vim ~/.zshrc"
+alias D="dolphin"
+alias estyle="astyle --style=break --indent=tab --pad-oper --pad-header"
+alias gdiff="git diff"
 
 # https://opensource.com/article/18/9/tips-productivity-zsh
 alias -s {txt,log}=vim # Open files with vim
@@ -62,4 +61,3 @@ alias -g G="| grep -E"
 alias -g Gi="| grep -iE"
 alias -g Gr="grep -IrE"
 alias -g TODAY=`date +%Y-%m-%d`
-alias estyle="astyle --style=break --indent=tab --pad-oper --pad-header"
