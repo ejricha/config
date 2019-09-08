@@ -67,3 +67,5 @@
 [user]
 	email = ejricha+github@gmail.com
 	name = Eric Richardson
+[credential]
+	helper = cache --timeout=3600
