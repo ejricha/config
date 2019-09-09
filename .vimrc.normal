@@ -7,8 +7,8 @@ syntax on
 set hlsearch
 set bg=dark
 set tabstop=4
-"set softtabstop=2
-"set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 "set expandtab
 
 " Allow modeline changes from top of file
@@ -22,3 +22,8 @@ set spelllang=en
 "  zug :  remove word from dict 
 "  ]s  :  go to next misspelled word
 "  [s  :  go to previous misspelled word
+
+" If there is a custom alias file, source it
+try
+	source ~/.vimrc.custom
+endtry
