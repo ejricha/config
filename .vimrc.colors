@@ -24,6 +24,3 @@ hi Special term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Red guib
 " Terminal mode cursor is red
 hi! TermCursorNC guibg=red guifg=white ctermbg=red ctermfg=white
 hi! TermCursor guibg=cyan ctermbg=cyan
-
-" Status line is dark blue on gray
-hi StatusLine cterm=NONE ctermbg=Gray ctermfg=DarkBlue
