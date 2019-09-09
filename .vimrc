@@ -4,7 +4,7 @@
 
 " Source a few common files
 source ~/.vimrc.normal
-source ~/.vimrc.vundle
+source ~/.vimrc.plugged
 source ~/.vimrc.colors
 command! SV source ~/.vimrc
 
