@@ -31,7 +31,7 @@
 [log]
 	date = format:%Y-%m-%d %H:%M
 [format]
-	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %Creset%<(120,trunc)%s%C(red)%C(bold)%d%Creset
+	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an%Creset  %s%C(red)%C(bold)%d%Creset
 [alias]
 	################
 	a = add
