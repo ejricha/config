@@ -34,6 +34,8 @@ bindkey "^ " globalias # expand aliases with Ctrl-Space
 #disable -r time # Use time -p instead
 
 # Global aliases
+alias -g Fn="find . -name"
+alias -g Fi="find . -iname"
 alias -g G="| grep -E"
 alias -g Gi="| grep -iE"
 alias -g Gr="grep -IrE"
