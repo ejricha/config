@@ -14,7 +14,7 @@ Plug 'airblade/vim-gitgutter' " shows git changes
 Plug 'arecarn/crunch'
 Plug 'janko-m/vim-test' " Run tests
 Plug 'junegunn/fzf' " Fuzzy finding
-Plug 'kien/rainbow_parentheses'
+Plug 'kien/rainbow_parentheses.vim'
 Plug 'mhinz/vim-grepper' " Grepper
 Plug 'morhetz/gruvbox'
 Plug 'pboettch/vim-cmake-syntax'
@@ -22,8 +22,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdcommenter'
-Plug 'sjl/gundo'
-Plug 'spolu/dwm'
+Plug 'sjl/gundo.git'
+Plug 'spolu/dwm.git'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive' " plugin on GitHub rep
@@ -60,3 +60,10 @@ hi Pmenu ctermfg=black ctermbg=cyan
 " Shortcuts
 "nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 "nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" Rainbow parentheses
+command! RB RainbowParenthesesToggle
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
