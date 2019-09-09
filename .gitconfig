@@ -69,3 +69,5 @@
 	name = Eric Richardson
 [credential]
 	helper = cache --timeout=3600
+[include]
+	path = ~/.gitconfig.custom
