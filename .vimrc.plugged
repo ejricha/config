@@ -4,53 +4,47 @@
 
 " BEGIN
 call plug#begin('~/.vim/plugged')
-Plug 'ChaiScript/vim-chaiscript'
-Plug 'ChaiScript/vim-cpp'
 Plug 'Mizuchi/STL-Syntax'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-gitgutter' " shows git changes
-"Plug 'altercation/vim-colors-solarized'
-Plug 'arecarn/crunch'
+Plug 'airblade/vim-gitgutter' " Show git changes
+Plug 'arecarn/crunch' " Calculator, :Crunch
 Plug 'janko-m/vim-test' " Run tests
 Plug 'junegunn/fzf' " Fuzzy finding
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'junegunn/fzf.vim' " Fuzzy finding
+Plug 'junegunn/rainbow_parentheses.vim' " Rainbow parentheses
 Plug 'mhinz/vim-grepper' " Grepper
-Plug 'morhetz/gruvbox'
-Plug 'pboettch/vim-cmake-syntax'
+Plug 'pboettch/vim-cmake-syntax' " CMake syntax highlighting
 Plug 'plasticboy/vim-markdown'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"Plug 'rdnetto/YCM-Generator' " Generate .ycm_extra_conf.py with :YcmGenerateConfig
 Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdcommenter'
-Plug 'sjl/gundo.git'
-Plug 'spolu/dwm.git'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive' " plugin on GitHub rep
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-projectionist'
 "Plug 'tpope/vim-scriptease', {'type': 'opt'}
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' " Status line awesome
 Plug 'w0rp/ale' " Linting
-Plug 'ycm-core/YouCompleteMe' " smart auto-completion
+Plug 'ycm-core/YouCompleteMe' " Smart auto-completion
 call plug#end()
 " END
 
-" Required
-filetype plugin indent on  " indent is optional
+" Configuration of plugins
 
-" vim-gitgutter
+" [airblade/vim-gitgutter]
+"  move between hunks with ]c and [c
 let g:gitgutter_enabled = 1 " enabled by default
 autocmd BufWritePost * GitGutter
 command! GG GitGutterBufferToggle
 command! GH GitGutterLineHighlightsToggle
 
-" YCM plugin
-let g:ycm_use_clangd = 0 " Use libclang by default, not clangd
-hi Pmenu ctermfg=black ctermbg=cyan
+" [junegunn/rainbow_parentheses.vim]
+"let g:RainbowParentheses " Rainbow by default
+autocmd VimEnter * RainbowParentheses " Rainbow by default
+command! RB RainbowParentheses!!
 
-" ALE plugins
+" [w0rp/ale]
 "let g:ale_enabled = 0
 " Plugins need to be added to runtimepath before helptags can be generated.
 "packloadall
@@ -61,9 +55,8 @@ hi Pmenu ctermfg=black ctermbg=cyan
 "nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 "nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Rainbow parentheses
-command! RB RainbowParenthesesToggle
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" [ycm-core/YouCompleteMe]
+let g:ycm_use_clangd = 0 " Use libclang by default, not clangd
+hi Pmenu ctermfg=black ctermbg=cyan
+map <F3> :YcmCompleter GoTo<CR>
+map <F9> :YcmCompleter FixIt<CR>
