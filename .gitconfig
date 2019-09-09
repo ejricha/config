@@ -29,37 +29,59 @@
 [rerere]
 	enabled = 1
 [log]
-	date = short # relative
+	date = format:%Y-%m-%d %H:%M
+[format]
+	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %Creset%<(120,trunc)%s%C(red)%C(bold)%d%Creset
 [alias]
-	s = status
-	st = status -sb
-	statu = status
-	stats = status
-	statsu = status
-	up = pull
+	################
+	a = add
+	amend = !git add -A && git commit --amend --no-edit # Add to the previous commit
+	################
+	br = branch
+	################
 	ci = commit
 	commi = commit
 	commt = commit
 	commti = commit
+	m = !git commit -m
+	################
 	co = checkout
-	graph = log --graph --oneline --decorate=short --branches='*'
-	lol = log --graph --pretty=tformat:'%C(yellow)%h%Creset %C(cyan)(%ad)%Creset %C(green)%an%C(reset) %s%C(cyan)%C(bold)%d%Creset' --color=always
-	gr = log --graph --pretty=tformat:'%C(yellow)%h%Creset %C(cyan)(%ad)%Creset %C(green)%an%Creset %<(80,trunc)%s%C(cyan)%C(bold)%d%Creset'
-	br = branch
+	################
+	d = diff --color-words='[^[:space:]]'
 	df = diff --color-words='[^[:space:]]'
 	diffunpushed = diff @{u}..
-	sh = show --date=format:'%Y-%m-%d %H:%M:%S' --pretty=tformat:'%C(yellow)%h %C(cyan)%ad %C(green)%aN%C(red)%d %C(reset)%s' --color=always
-	lg = log --name-status --pretty=format:'%C(red)%h%C(reset) %C(yellow)%ad%C(reset) %C(green)%s%C(reset)%n %C(magenta)[%cr]%C(reset) %C(cyan)(%cE)%C(reset)' --color=always
-	lgg = log --date=format:'%Y-%m-%d %H:%M:%S' --pretty=tformat:'%C(yellow)%h %C(cyan)%ad %C(green)%aN%C(red)%d %C(reset)%s' --color=always
-	logfollow = log --name-status --pretty=tformat:'%C(red)%h%C(reset) %C(yellow)%ad%C(reset) %C(green)%s%C(reset)%n %C(magenta)[%cr]%C(reset) %C(cyan)(%cE)%C(reset)' --color=always --follow
+	################
+	gr = log --graph
+	graph = log --graph --oneline --decorate=short --branches='*'
+	lol = log --graph --color=always
+	################
+	l = log
+	lgg = log
+	lg = log --name-status --color=always
+	logfollow = log --follow
 	logunpushed = log ORIG_HEAD^..
-	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
-	pend = cherry -v origin/master
-	#prefab = cherry -v origin/fabrication
+	################
+	patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
+	################
+	pend = cherry -v origin/master # Show pending changes to master branch
+	################
+	r = remote -v
+	################
 	reorder = "!GIT_SEQUENCE_EDITOR=\"sed -i -n 'h;1n;2p;g;p'\" git rebase -i HEAD~2" # Reorder the last two commits
-	patch = am --reject --ignore-whitespace -i
-[format]
-	pretty = '%C(yellow)%h%Creset %C(magenta)%cd%Creset %d %s'
+	################
+	s = status
+	stats = status
+	statsu = status
+	statu = status
+	st = status -sb
+	################
+	sh = show --color=always
+	################
+	up = pull
+	################
+	who = "!f() { W=$1; shift; git log --author=$W $@; }; f"
+	w = !git who
+	################
 [push]
 	default = simple
 [http]
