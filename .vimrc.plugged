@@ -59,6 +59,7 @@ command! RB RainbowParentheses!!
 
 " [ycm-core/YouCompleteMe]
 let g:ycm_use_clangd = 0 " Use libclang by default, not clangd
-hi Pmenu ctermfg=black ctermbg=cyan
+hi Pmenu ctermfg=cyan ctermbg=darkgray
+hi PmenuSel ctermfg=black ctermbg=cyan
 map <F3> :YcmCompleter GoTo<CR>
 map <F9> :YcmCompleter FixIt<CR>
