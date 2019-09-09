@@ -9,7 +9,8 @@ endif
 
 " Treat file extensions a certain way
 autocmd BufRead,BufNewFile *.pldesc set filetype=json
-"autocmd BufRead,BufNewFile .vimrc* set filetype=vimrc
+autocmd BufRead,BufNewFile .vimrc* set filetype=vim
+autocmd BufRead,BufNewFile .gitconfig* set filetype=gitconfig
 
 " Show line numbers, with a custom cursor color
 set number
