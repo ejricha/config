@@ -15,8 +15,10 @@ set shiftwidth=4
 "set modeline
 
 " Spellcheck
-set spelllang=en
 "set spell
+set spelllang=en
+hi clear Spellbad
+hi SpellBad cterm=underline gui=undercurl ctermfg=lightred ctermbg=black
 " Usage:
 "  zg  :  add word to dict
 "  zug :  remove word from dict 
