@@ -47,6 +47,8 @@
 	################
 	co = checkout
 	################
+	current = "!git rev-parse --abbrev-ref --symbolic-full-name @{u}"
+	################
 	d = diff --color-words='[^[:space:]]'
 	df = diff --color-words='[^[:space:]]'
 	diffunpushed = diff @{u}..
@@ -56,10 +58,13 @@
 	lol = log --graph --color=always
 	################
 	l = log
-	lgg = log
 	lg = log --name-status --color=always
 	logfollow = log --follow
-	logunpushed = log ORIG_HEAD^..
+	################
+	lgg = !git logunpushed && git logpushed -5
+	logformat = "!git log --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %Creset${TEXT}%s%C(red)%C(bold)%d%Creset\""
+	logpushed = "!C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}"
+	logunpushed = "!C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD"
 	################
 	patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
 	################
