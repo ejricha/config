@@ -27,6 +27,9 @@ source $ZSH/oh-my-zsh.sh
 # No, I don't want to share history between terminals
 setopt no_share_history
 
+# Always use a tab size of 4 in the terminal
+tabs -4
+
 # Add to PATH
 PATH+=:~/toolbox/bash:~/toolbox/python
 
