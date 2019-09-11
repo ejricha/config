@@ -40,6 +40,7 @@ let g:gitgutter_enabled = 1 " enabled by default
 autocmd BufWritePost * GitGutter
 command! GG GitGutterBufferToggle
 command! GH GitGutterLineHighlightsToggle
+command! GD GitGutterPreviewHunk
 
 " [junegunn/rainbow_parentheses.vim]
 "let g:RainbowParentheses " Rainbow by default
