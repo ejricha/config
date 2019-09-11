@@ -26,5 +26,6 @@ hi! TermCursorNC guibg=red guifg=white ctermbg=red ctermfg=white
 hi! TermCursor guibg=cyan ctermbg=cyan
 
 " Show hidden characters
-set lcs=tab:>-,trail:#
+hi NonText guifg=darkblue ctermfg=darkblue
+set lcs=tab:>-,trail:-
 set list
