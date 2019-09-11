@@ -24,3 +24,7 @@ hi Special term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Red guib
 " Terminal mode cursor is red
 hi! TermCursorNC guibg=red guifg=white ctermbg=red ctermfg=white
 hi! TermCursor guibg=cyan ctermbg=cyan
+
+" Show hidden characters
+set lcs=tab:>-,trail:#
+set list
