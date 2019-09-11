@@ -43,8 +43,7 @@ command! GH GitGutterLineHighlightsToggle
 command! GD GitGutterPreviewHunk
 
 " [junegunn/rainbow_parentheses.vim]
-"let g:RainbowParentheses " Rainbow by default
-autocmd VimEnter * RainbowParentheses " Rainbow by default
+"autocmd VimEnter * RainbowParentheses " Disable by default
 command! RB RainbowParentheses!!
 
 " [w0rp/ale]
