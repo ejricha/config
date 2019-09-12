@@ -21,11 +21,17 @@ hi clear Spellbad
 hi SpellBad cterm=underline gui=undercurl ctermfg=lightred ctermbg=black
 " Usage:
 "  zg  :  add word to dict
-"  zug :  remove word from dict 
+"  zug :  remove word from dict
 "  ]s  :  go to next misspelled word
 "  [s  :  go to previous misspelled word
 
+" Function to source only if file exists
+" https://devel.tech/snippets/n/vIIMz8vZ/load-vim-source-files-only-if-they-exist/
+function! SourceIfExists(file)
+	if filereadable(expand(a:file))
+		exe 'source' a:file
+	endif
+endfunction
+
 " If there is a custom alias file, source it
-try
-	source ~/.vimrc.custom
-endtry
+call SourceIfExists("~/.vimrc.custom")
