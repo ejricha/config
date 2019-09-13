@@ -63,7 +63,7 @@
 	lg = log --name-status --color=always
 	logfollow = log --follow
 	################
-	lgg = !git logunpushed && git logpushed -5
+	lgg = "!git logunpushed ${@} && git logpushed -5 ${@}"
 	logformat = "!git log --pretty=\"tformat:%C(yellow bold)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %Creset${TEXT}%s%C(magenta)%d%Creset\""
 	logpushed = "!C=$(git current) && TEXT=\"%C(white)\" git logformat ${C}"
 	logunpushed = "!C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD"
