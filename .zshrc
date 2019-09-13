@@ -24,6 +24,10 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # ==================
 
+# Fix middle-of-word completion
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+
 # No, I don't want to share history between terminals
 setopt no_share_history
 
