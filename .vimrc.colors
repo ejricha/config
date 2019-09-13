@@ -25,7 +25,7 @@ hi Special term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Red guib
 hi! TermCursorNC guibg=red guifg=white ctermbg=red ctermfg=white
 hi! TermCursor guibg=cyan ctermbg=cyan
 
-" Show hidden characters
+" Show hidden characters, but not by default
+"set list
 hi NonText guifg=darkblue ctermfg=darkblue
 set lcs=tab:>-,trail:-
-set list
