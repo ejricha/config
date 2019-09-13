@@ -22,6 +22,8 @@
 	excludesfile = ~/.gitignore-rab
 	editor = nvim
 	pager = cat
+[stash]
+	pager = less
 [apply]
 	whitespace = nowarn
 [branch]
@@ -31,7 +33,7 @@
 [log]
 	date = format:%Y-%m-%d %H:%M
 [format]
-	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an%Creset  %s%C(red)%C(bold)%d%Creset
+	pretty = tformat:%C(yellow bold)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an%Creset  %s%C(magenta)%d%Creset
 [alias]
 	################
 	a = add
@@ -62,8 +64,8 @@
 	logfollow = log --follow
 	################
 	lgg = !git logunpushed && git logpushed -5
-	logformat = "!git log --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %Creset${TEXT}%s%C(red)%C(bold)%d%Creset\""
-	logpushed = "!C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}"
+	logformat = "!git log --pretty=\"tformat:%C(yellow bold)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %Creset${TEXT}%s%C(magenta)%d%Creset\""
+	logpushed = "!C=$(git current) && TEXT=\"%C(white)\" git logformat ${C}"
 	logunpushed = "!C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD"
 	################
 	patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
