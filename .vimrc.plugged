@@ -46,6 +46,12 @@ command! GD GitGutterPreviewHunk
 "autocmd VimEnter * RainbowParentheses " Disable by default
 command! RB RainbowParentheses!!
 
+" [vim-airline/vim-airline]
+" Fix the Z section of the statusbar
+if !exists('g:airline_section_z')
+	let g:airline_section_z = '%2p%% %3l/%3L:%03c'
+endif
+
 " [w0rp/ale]
 "let g:ale_enabled = 0
 " Plugins need to be added to runtimepath before helptags can be generated.
