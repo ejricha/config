@@ -11,6 +11,9 @@ set softtabstop=4
 set shiftwidth=4
 "set expandtab
 
+" Enable the mouse
+set mouse=a
+
 " Allow modeline changes from top of file
 "set modeline
 
