@@ -42,3 +42,6 @@ alias -g G="| grep -E"
 alias -g Gi="| grep -iE"
 alias -g Gr="grep -IrE"
 alias -g TODAY=`date +%Y-%m-%d`
+
+# Add to the path
+PATH+=:~/software/github/scripts
