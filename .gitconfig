@@ -17,6 +17,12 @@
 	added = yellow bold
 	changed = green bold
 	untracked = cyan bold
+#[color "decorate"]
+#	HEAD = cyan bold
+#	branch = green
+#	remoteBranch = red bold
+#	tag = blue bold
+#	stash = blue
 [core]
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore-rab
@@ -31,7 +37,7 @@
 [log]
 	date = format:%Y-%m-%d %H:%M
 [format]
-	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an%Creset  %s%d
+	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %C(auto)%s%d
 [alias]
 	################
 	a = add
@@ -62,7 +68,7 @@
 	logfollow = log --follow
 	################
 	lgg = "!git logunpushed ${@} && git logpushed -5 ${@}"
-	logformat = "!git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %Creset${TEXT}%s%C(magenta)%d%Creset\""
+	logformat = "!git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  ${TEXT}%s%C(auto)%d\""
 	logpushed = "!C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}"
 	logunpushed = "!C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD"
 	################
