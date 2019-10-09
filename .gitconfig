@@ -17,8 +17,8 @@
 	added = yellow bold
 	changed = green bold
 	untracked = cyan bold
-#[color "decorate"]
-#	HEAD = cyan bold
+[color "decorate"]
+	HEAD = blue bold
 #	branch = green
 #	remoteBranch = red bold
 #	tag = blue bold
