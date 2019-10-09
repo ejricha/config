@@ -37,7 +37,7 @@
 [log]
 	date = format:%Y-%m-%d %H:%M
 [format]
-	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %C(auto)%s%d
+	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %C(reset)%s%C(auto)%d
 [alias]
 	################
 	a = add
@@ -68,7 +68,7 @@
 	logfollow = log --follow
 	################
 	lgg = "!git logunpushed ${@} && git logpushed -5 ${@}"
-	logformat = "!git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  ${TEXT}%s%C(auto)%d\""
+	logformat = "!git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\""
 	logpushed = "!C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}"
 	logunpushed = "!C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD"
 	################
