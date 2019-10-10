@@ -59,6 +59,7 @@
 	df = diff --color-words='[^[:space:]]'
 	diffunpushed = diff @{u}..
 	################
+	g = log --graph -20
 	gr = log --graph
 	graph = log --graph --oneline --decorate=short --branches='*'
 	lol = log --graph --color=always
