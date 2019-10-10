@@ -28,8 +28,10 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 
-# No, I don't want to share history between terminals
+# No, I don't want to share history between terminals,
+#  and I like the trailing directory slash
 setopt no_share_history
+setopt no_auto_remove_slash
 
 # Always use a tab size of 4 in the terminal
 tabs -4
