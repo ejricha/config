@@ -33,6 +33,15 @@ zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 setopt no_share_history
 setopt no_auto_remove_slash
 
+# Change some highlighting
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=magenta,bold,underline'
+ZSH_HIGHLIGHT_STYLES[path]='fg=yellow,bold'
+ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
+
 # Always use a tab size of 4 in the terminal
 tabs -4
 
