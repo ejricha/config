@@ -90,6 +90,8 @@
 	sh = show --color=always
 	################
 	up = pull
+	upr = pull --rebase
+	pr = pull --rebase
 	################
 	who = "!f() { W=$1; shift; git log --author=$W $@; }; f"
 	w = !git who
