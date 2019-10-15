@@ -42,6 +42,13 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=yellow,bold'
 ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=cyan,bold'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=red,bold'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=red'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=red,bold'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=magenta,bold'
 
 # Always use a tab size of 4 in the terminal
 tabs -4
