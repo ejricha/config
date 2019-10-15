@@ -16,7 +16,7 @@ HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins
-plugins=(git globalias zsh-syntax-highlighting)
+plugins=(git docker docker-compose globalias zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
