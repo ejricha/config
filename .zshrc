@@ -32,6 +32,7 @@ zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 #  and I like the trailing directory slash
 setopt no_share_history
 setopt no_auto_remove_slash
+ZLE_REMOVE_SUFFIX_CHARS=""
 
 # Change some highlighting
 typeset -A ZSH_HIGHLIGHT_STYLES
