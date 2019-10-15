@@ -17,6 +17,7 @@ alias o="dolphin"
 alias gc="google-chrome"
 alias estyle="astyle --style=break --indent=tab --pad-oper --pad-header"
 alias gdiff="git diff --no-prefix -w"
+alias egrep="grep -E"
 
 # https://opensource.com/article/18/9/tips-productivity-zsh
 alias -s {txt,log}=vim # Open files with vim
