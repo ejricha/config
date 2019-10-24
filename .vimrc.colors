@@ -4,7 +4,7 @@
 
 " Overrides for certain filetypes
 if has("autocmd")
-  autocmd FileType make set noexpandtab ts=4 st=4 sw=4
+  autocmd FileType make set noexpandtab ts=4 sts=4 sw=4
 endif
 
 " Treat file extensions a certain way
