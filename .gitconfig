@@ -76,6 +76,9 @@
 	################
 	pend = cherry -v origin/master # Show pending changes to master branch
 	################
+	praise = blame
+	p = blame
+	################
 	r = remote -v
 	################
 	reorder = "!GIT_SEQUENCE_EDITOR=\"sed -i -n 'h;1n;2p;g;p'\" git rebase -i HEAD~2" # Reorder the last two commits
