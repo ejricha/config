@@ -54,7 +54,7 @@ ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=magenta,bold'
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=87'
 
 # Always use a tab size of 4 in the terminal
-tabs -4
+#tabs -4
 
 # Add to PATH
 PATH+=:~/toolbox/bash:~/toolbox/python
