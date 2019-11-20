@@ -36,7 +36,7 @@ ZLE_REMOVE_SUFFIX_CHARS=""
 
 # Change some highlighting
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=magenta,bold,underline'
 ZSH_HIGHLIGHT_STYLES[path]='fg=yellow,bold'
 ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=yellow'
@@ -49,6 +49,9 @@ ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=red,bold'
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=red'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=red,bold'
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=magenta,bold'
+
+# Suggestion colors
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=87'
 
 # Always use a tab size of 4 in the terminal
 tabs -4
