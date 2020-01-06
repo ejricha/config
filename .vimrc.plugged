@@ -5,7 +5,7 @@
 " BEGIN
 call plug#begin('~/.vim/plugged')
 Plug 'Mizuchi/STL-Syntax'
-Plug 'airblade/vim-gitgutter' " Show git changes
+"Plug 'airblade/vim-gitgutter' " Show git changes
 Plug 'arecarn/crunch' " Calculator, :Crunch
 Plug 'ejricha/syntax.vim' " Eric's custom syntax highlighting
 Plug 'janko-m/vim-test' " Run tests
@@ -13,6 +13,7 @@ Plug 'junegunn/fzf' " Fuzzy finding
 Plug 'junegunn/fzf.vim' " Fuzzy finding
 Plug 'junegunn/rainbow_parentheses.vim' " Rainbow parentheses
 Plug 'mhinz/vim-grepper' " Grepper
+Plug 'mhinz/vim-signify' " Signify (like GitGitter)
 Plug 'pboettch/vim-cmake-syntax' " CMake syntax highlighting
 Plug 'plasticboy/vim-markdown'
 "Plug 'rdnetto/YCM-Generator' " Generate .ycm_extra_conf.py with :YcmGenerateConfig
@@ -35,12 +36,14 @@ call plug#end()
 filetype plugin on
 
 " [airblade/vim-gitgutter]
+" DISABLED, switch to vim-signify
 "  move between hunks with ]c and [c
-let g:gitgutter_enabled = 1 " enabled by default
-autocmd BufWritePost * GitGutter
-command! GG GitGutterBufferToggle
-command! GH GitGutterLineHighlightsToggle
-command! GD GitGutterPreviewHunk
+"let g:gitgutter_enabled = 1 " enabled by default
+"autocmd BufWritePost * GitGutter
+"command! GG GitGutterBufferToggle
+"command! GH GitGutterLineHighlightsToggle
+"command! GD GitGutterPreviewHunk
+" [mhinz/vim-signify]
 
 " [junegunn/rainbow_parentheses.vim]
 "autocmd VimEnter * RainbowParentheses " Disable by default
