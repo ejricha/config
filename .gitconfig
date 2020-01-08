@@ -18,8 +18,9 @@
 	untracked = cyan bold
 [color "decorate"]
 	HEAD = blue bold
-#	branch = green
-#	remoteBranch = red bold
+	branch = green bold
+	remoteBranch = magenta bold
+	master = red bold
 #	tag = blue bold
 #	stash = blue
 [core]
