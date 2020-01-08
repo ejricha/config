@@ -5,7 +5,6 @@
 " BEGIN
 call plug#begin('~/.vim/plugged')
 Plug 'Mizuchi/STL-Syntax'
-"Plug 'airblade/vim-gitgutter' " Show git changes
 Plug 'arecarn/crunch' " Calculator, :Crunch
 Plug 'ejricha/syntax.vim' " Eric's custom syntax highlighting
 Plug 'janko-m/vim-test' " Run tests
@@ -35,15 +34,12 @@ call plug#end()
 " Configuration of plugins
 filetype plugin on
 
-" [airblade/vim-gitgutter]
-" DISABLED, switch to vim-signify
-"  move between hunks with ]c and [c
-"let g:gitgutter_enabled = 1 " enabled by default
-"autocmd BufWritePost * GitGutter
-"command! GG GitGutterBufferToggle
-"command! GH GitGutterLineHighlightsToggle
-"command! GD GitGutterPreviewHunk
 " [mhinz/vim-signify]
+command! GG SignifyToggle
+command! GH SignifyToggleHighlight
+command! GD SignifyHunkDiff
+command! GF SignifyDiff
+command! GU SignifyHunkUndo
 
 " [junegunn/rainbow_parentheses.vim]
 "autocmd VimEnter * RainbowParentheses " Disable by default
