@@ -53,7 +53,7 @@ if !exists('g:airline_section_z')
 endif
 
 " [w0rp/ale]
-"let g:ale_enabled = 0
+let g:ale_enabled = 0
 " Plugins need to be added to runtimepath before helptags can be generated.
 "packloadall
 " Load all of the helptags now, after plugins have been loaded.
