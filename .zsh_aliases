@@ -19,6 +19,7 @@ alias estyle="astyle --style=break --indent=tab --pad-oper --pad-header"
 alias gdiff="git diff --no-prefix -w"
 alias egrep="grep -E"
 alias sl="ls"
+alias ll="ls -l --time-style='+%Y-%m-%d %H:%M:%S'"
 
 # https://opensource.com/article/18/9/tips-productivity-zsh
 alias -s {txt,log}=vim # Open files with vim
