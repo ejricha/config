@@ -23,6 +23,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-liquid'
 Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-repeat'
 "Plug 'tpope/vim-scriptease', {'type': 'opt'}
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline' " Status line awesome
