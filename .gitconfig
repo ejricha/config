@@ -73,6 +73,8 @@
 	logpushed = "!C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}"
 	logunpushed = "!C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD"
 	################
+	mg = merge --no-ff # Don't do fast-forward merges
+	################
 	patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
 	################
 	pend = cherry -v origin/master # Show pending changes to master branch
