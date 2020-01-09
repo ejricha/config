@@ -24,7 +24,7 @@
 #	tag = blue bold
 #	stash = blue
 [core]
-	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore-rab
 	editor = nvim
 	pager = cat
@@ -37,7 +37,7 @@
 [log]
 	date = format:%Y-%m-%d %H:%M
 [format]
-	pretty = tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(15,trunc)%an  %C(reset)%s%C(auto)%d
+	pretty = tformat:%C(yellow)%h %C(cyan) %ad %C(green) %<(15,trunc)%an %C(reset) %s%C(auto)%d
 [alias]
 	################
 	a = add
@@ -53,7 +53,7 @@
 	################
 	co = checkout
 	################
-	current = "!git rev-parse --abbrev-ref --symbolic-full-name @{u}"
+	current = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
 	################
 	d = diff --color-words='[^[:space:]]'
 	df = diff --color-words='[^[:space:]]'
