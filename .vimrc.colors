@@ -12,10 +12,8 @@ autocmd BufRead,BufNewFile *.pldesc set filetype=json
 autocmd BufRead,BufNewFile .vimrc* set filetype=vim
 autocmd BufRead,BufNewFile .gitconfig* set filetype=gitconfig
 
-" Show line numbers, with a custom cursor color
-set number
+" Custom colors for line numbers and cursor
 hi LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
-set cursorline
 hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 
 " Use a bright red for Special

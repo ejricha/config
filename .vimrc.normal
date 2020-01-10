@@ -15,6 +15,11 @@ set nofoldenable
 " Enable the mouse
 set mouse=a
 
+" Line numbers can be toggled with :NN
+set number
+command! NN set number!
+set cursorline
+
 " Allow modeline changes from top of file
 "set modeline
 
