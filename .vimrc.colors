@@ -8,9 +8,10 @@ if has("autocmd")
 endif
 
 " Treat file extensions a certain way
-autocmd BufRead,BufNewFile *.pldesc set filetype=json
-autocmd BufRead,BufNewFile .vimrc* set filetype=vim
-autocmd BufRead,BufNewFile .gitconfig* set filetype=gitconfig
+autocmd BufEnter *.pldesc    set filetype=json
+autocmd BufEnter .vimrc*     set filetype=vim
+autocmd BufEnter .gitconfig* set filetype=gitconfig
+autocmd BufEnter *.cl        set filetype=cpp
 
 " Custom colors for line numbers and cursor
 hi LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
