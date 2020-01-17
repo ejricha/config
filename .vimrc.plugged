@@ -6,7 +6,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'Mizuchi/STL-Syntax'
 Plug 'arecarn/crunch' " Calculator, :Crunch
-Plug 'ejricha/syntax.vim' " Eric's custom syntax highlighting
 Plug 'janko-m/vim-test' " Run tests
 Plug 'junegunn/fzf' " Fuzzy finding
 Plug 'junegunn/fzf.vim' " Fuzzy finding
