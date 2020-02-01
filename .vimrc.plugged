@@ -12,7 +12,6 @@ Plug 'junegunn/fzf.vim' " Fuzzy finding
 Plug 'junegunn/rainbow_parentheses.vim' " Rainbow parentheses
 Plug 'mhinz/vim-grepper' " Grepper
 Plug 'mhinz/vim-signify' " Signify (like GitGitter)
-Plug 'pboettch/vim-cmake-syntax' " CMake syntax highlighting
 Plug 'plasticboy/vim-markdown'
 "Plug 'rdnetto/YCM-Generator' " Generate .ycm_extra_conf.py with :YcmGenerateConfig
 Plug 'sbdchd/neoformat'
@@ -25,6 +24,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 "Plug 'tpope/vim-scriptease', {'type': 'opt'}
 Plug 'tpope/vim-unimpaired'
+Plug 'vhdirk/vim-cmake' " Lots of cmake improvements
 Plug 'vim-airline/vim-airline' " Status line awesome
 Plug 'w0rp/ale' " Linting
 Plug 'ycm-core/YouCompleteMe' " Smart auto-completion
