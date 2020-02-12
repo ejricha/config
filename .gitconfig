@@ -99,6 +99,7 @@
 	################
 	who = "!f() { W=$1; shift; git log --author=$W $@; }; f"
 	w = !git who
+	whoami = config user.email
 	################
 [push]
 	default = simple
