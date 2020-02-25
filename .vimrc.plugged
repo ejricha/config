@@ -12,9 +12,11 @@ Plug 'junegunn/fzf.vim' " Fuzzy finding
 Plug 'junegunn/rainbow_parentheses.vim' " Rainbow parentheses
 Plug 'mhinz/vim-grepper' " Grepper
 Plug 'mhinz/vim-signify' " Signify (like GitGitter)
+Plug 'neovim/pynvim'
 Plug 'plasticboy/vim-markdown'
 "Plug 'rdnetto/YCM-Generator' " Generate .ycm_extra_conf.py with :YcmGenerateConfig
 Plug 'sbdchd/neoformat'
+Plug 'sakhnik/nvim-gdb' " Integrate with gdb
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-dispatch'
