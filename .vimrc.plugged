@@ -43,6 +43,9 @@ command! GD SignifyHunkDiff
 command! GF SignifyDiff
 command! GU SignifyHunkUndo
 
+" [tpope/vim-fugitive]
+command! GB Gblame
+
 " [junegunn/rainbow_parentheses.vim]
 "autocmd VimEnter * RainbowParentheses " Disable by default
 command! RB RainbowParentheses!!
