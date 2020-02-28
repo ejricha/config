@@ -56,6 +56,9 @@ ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=magenta,bold'
 # Always use a tab size of 4 in the terminal
 #tabs -4
 
+# Don't use more or less
+export PAGER=most
+
 # Grep should highlight matches magenta
 export GREP_COLORS="ms=1;35"
 

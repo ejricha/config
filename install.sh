@@ -55,6 +55,9 @@ fix_all_links()
 	create_link $DIR/.vimrc.colors ~/
 	create_link $DIR/.vimrc.normal ~/
 	create_link $DIR/.vimrc.plugged ~/
+
+	# most
+	create_link $DIR/.mostrc ~/
 }
 
 # Check a single link, and back it up and fix it
