@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install the following packages
-PACKAGES="ssh curl zsh tmux neovim"
+PACKAGES="ssh curl zsh tmux neovim most"
 DIR=`dirname $(realpath $0)`
 DATETIME=`date +%Y-%m-%d_%H%M%S`
 
