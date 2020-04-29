@@ -8,9 +8,9 @@
 	current = green reverse
 	local = green
 [color "diff"]
-	meta = yellow bold
+	meta = yellow
 	frag = magenta bold
-	old = red bold
+	old = red
 	new = green bold
 [color "status"]
 	added = yellow bold
