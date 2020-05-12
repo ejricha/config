@@ -40,7 +40,7 @@ PROMPT="
 [%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n)\
 %{$fg[white]%}@\
 %{$fg[green]%}%m\
-%{$fg[white]%}: \
+%{$fg[white]%}:\
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}]\
 ${git_info}\
  \
