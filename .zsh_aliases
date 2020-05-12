@@ -14,6 +14,7 @@ alias VZ="vim ~/.zshrc"
 # Other aliases
 alias D="dolphin"
 alias o="dolphin"
+alias g="git"
 alias gc="google-chrome"
 alias estyle="astyle --style=break --indent=tab --pad-oper --pad-header"
 alias gdiff="git diff --no-prefix -w"
