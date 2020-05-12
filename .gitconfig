@@ -8,10 +8,13 @@
 	current = green reverse
 	local = green
 [color "diff"]
+	context = white
+	commit = magenta
+	whitespace = yellow bold
 	meta = yellow
 	frag = magenta bold
 	old = red
-	new = green bold
+	new = cyan bold
 [color "status"]
 	added = yellow bold
 	changed = green bold
