@@ -31,6 +31,8 @@
 	excludesfile = ~/.gitignore-rab
 	editor = nvim
 	pager = cat
+[merge]
+	tool = vimdiff
 [stash]
 	pager = less
 [apply]
