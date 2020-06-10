@@ -64,6 +64,8 @@
 	df = diff --color-words='[^[:space:]]'
 	diffunpushed = diff @{u}..
 	################
+	find = log --reverse -G
+	################
 	g = log --graph -20
 	gr = log --graph
 	graph = log --graph --oneline --decorate=short --branches='*'
