@@ -138,6 +138,26 @@ module.exports = {
     webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    hyperCustomTouchbar: [
+      // if you just need a single button then don't add options array
+      { label: 'KMW', command: 'KMW' },
+      { label: 'man', command: 'man ', prompt: true },
+      {
+        label: 'git',
+        options: [
+          { label: 'status', command: 'git status' },  
+          { label: 'lgg', command: 'git lgg' },
+          { label: 'diff', command: 'git diff' },          
+        ]
+      },
+      {
+        label: 'vim',
+        options: [
+          { label: 'quit', command: ':q!', esc: true },
+          { label: 'save & quit', command: ':x', esc: true },
+        ]
+      },
+    ],
   },
 
   // a list of plugins to fetch and install from npm
@@ -146,7 +166,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: ["hyper-hide-title", "hyper-custom-touchbar"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
