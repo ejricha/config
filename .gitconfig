@@ -108,6 +108,8 @@
 	w = !git who
 	whoami = config user.email
 	################
+[pull]
+	rebase = false
 [push]
 	default = simple
 [http]
