@@ -9,12 +9,13 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 18,
 
     // font family with optional fallbacks
-    //fontFamily: 'Ubuntu Mono, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+	//fontFamily: 'Ubuntu Mono, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Ubuntu Mono',
     //fontFamily: 'Source Code Pro',
-    fontFamily: 'MesloLGS NF',
+    //fontFamily: 'MesloLGS NF',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
