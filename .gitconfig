@@ -48,6 +48,8 @@
 	a = add
 	amend = !git add -A && git commit --amend --no-edit # Add to the previous commit
 	################
+	b = blame
+	be = blame -e
 	br = branch
 	################
 	ci = commit
@@ -86,8 +88,9 @@
 	################
 	pend = cherry -v origin/master # Show pending changes to master branch
 	################
-	praise = blame
-	p = blame
+	praise = blame -e
+	pr = praise
+	p = praise
 	################
 	r = remote -v
 	################
