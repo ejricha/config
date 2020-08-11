@@ -78,7 +78,9 @@
 	logfollow = log --follow
 	################
 	lgg = !git logunpushed ${@} && git logpushed -5 ${@}
+	lge = !C=$(git current) && TEXT=\"%C(white bold)\" git logemail ${@}
 	logformat = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
+	logemail = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(30,trunc)%ae  ${TEXT}%s%C(reset)%C(auto)%d\"
 	logpushed = !C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}
 	logunpushed = !C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD
 	################
