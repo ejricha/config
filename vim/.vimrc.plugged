@@ -4,32 +4,22 @@
 
 " BEGIN
 call plug#begin('~/.vim/plugged')
-Plug 'Mizuchi/STL-Syntax'
-Plug 'arecarn/crunch' " Calculator, :Crunch
-Plug 'janko-m/vim-test' " Run tests
-Plug 'junegunn/fzf' " Fuzzy finding
-Plug 'junegunn/fzf.vim' " Fuzzy finding
-Plug 'junegunn/rainbow_parentheses.vim' " Rainbow parentheses
-Plug 'mhinz/vim-grepper' " Grepper
 Plug 'mhinz/vim-signify' " Signify (like GitGitter)
-"Plug 'neovim/pynvim'
-Plug 'plasticboy/vim-markdown'
-"Plug 'rdnetto/YCM-Generator' " Generate .ycm_extra_conf.py with :YcmGenerateConfig
-Plug 'sbdchd/neoformat'
-Plug 'sakhnik/nvim-gdb' " Integrate with gdb
-"Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-liquid'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-repeat'
-"Plug 'tpope/vim-scriptease', {'type': 'opt'}
-Plug 'tpope/vim-unimpaired'
 Plug 'vhdirk/vim-cmake' " Lots of cmake improvements
+Plug 'junegunn/rainbow_parentheses.vim' " Rainbow parentheses that works with cmake?
+Plug 'pboettch/vim-cmake-syntax'
+Plug 'yegappan/mru' " Most-Recently-Used
 Plug 'vim-airline/vim-airline' " Status line awesome
-"Plug 'w0rp/ale' " Linting
-"Plug 'ycm-core/YouCompleteMe' " Smart auto-completion
+Plug 'machakann/vim-swap' " Swap values around commas
+Plug 'Mizuchi/STL-Syntax'
+Plug 'neovim/pynvim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'plasticboy/vim-markdown'
+Plug 'sbdchd/neoformat'
+Plug 'lilydjwg/colorizer'
+Plug 'w0rp/ale' " Not in use yet
+"Plug 'tpope/vim-fugitive' " No longer works
+"Plug 'kien/rainbow_parentheses.vim' " Doese does NOT work with CMake
 call plug#end()
 " END
 
@@ -43,12 +33,14 @@ command! GD SignifyHunkDiff
 command! GF SignifyDiff
 command! GU SignifyHunkUndo
 
-" [tpope/vim-fugitive]
-command! GB Gblame
-
-" [junegunn/rainbow_parentheses.vim]
-"autocmd VimEnter * RainbowParentheses " Disable by default
+" [kien/rainbow_parentheses.vim]
 command! RB RainbowParentheses!!
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
+" Enable automatically on a few filetypes
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme,sh,zsh,python RainbowParentheses
+augroup END
 
 " [vim-airline/vim-airline]
 " Fix the Z section of the statusbar
@@ -56,20 +48,34 @@ if !exists('g:airline_section_z')
 	let g:airline_section_z = '%2p%% %3l/%3L:%03c'
 endif
 
-" [w0rp/ale]
-let g:ale_enabled = 0
-" Plugins need to be added to runtimepath before helptags can be generated.
-"packloadall
-" Load all of the helptags now, after plugins have been loaded.
-" All messages and errors will be ignored.
-"silent! helptags ALL
-" Shortcuts
-"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-"nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" [ycm-core/YouCompleteMe]
-let g:ycm_use_clangd = 0 " Use libclang by default, not clangd
-hi Pmenu ctermfg=cyan ctermbg=darkgray
-hi PmenuSel ctermfg=black ctermbg=cyan
-map <F3> :YcmCompleter GoTo<CR>
-map <F9> :YcmCompleter FixIt<CR>
+" [zivyangll/git-blame.vim]
+" nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+
+" [ntpeters/vim-better-whitespace]
+" :{Enable,Disable,Toggle}Whitespace
+" :StripWhitespace
+" :{Enable,Disable,Toggle}StripWhitespaceOnSave
+highlight ExtraWhitespace ctermbg=red
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=1
+let g:strip_only_modified_lines=0
+let g:show_spaces_that_precede_tabs=1
+let g:better_whitespace_verbosity=1
+let g:better_whitespace_filetypes_blacklist=['diff', 'git', 'gitcommit', 'gitsendemail', 'unite', 'qf', 'help']
+nnoremap ]w :NextTrailingWhitespace<CR>
+nnoremap [w :PrevTrailingWhitespace<CR>
+" Without this, it would require:
+"highlight RedundantSpaces ctermbg=red guibg=red
+"match RedundantSpaces /\s\+$/
+":%!clang-format-9 --assume-filename=%
+
+" [tpope/vim-fugitive]
+" :Git blame
+command! GB Git blame
+
+" [machakann/vim-swap]
+" g<, g>, gs
+
+" Use the global clipboard
+set clipboard=unnamedplus

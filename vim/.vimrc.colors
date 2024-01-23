@@ -4,14 +4,17 @@
 
 " Overrides for certain filetypes
 if has("autocmd")
-  autocmd FileType make set noexpandtab ts=4 sts=4 sw=4
+  autocmd FileType make,cmake   set expandtab ts=2 sts=2 sw=2
+  autocmd FileType zsh,bash,sh  set expandtab ts=2 sts=2 sw=2
+  autocmd FileType vim,json     set expandtab ts=2 sts=2 sw=2
 endif
 
 " Treat file extensions a certain way
-autocmd BufEnter *.pldesc    set filetype=json
-autocmd BufEnter .vimrc*     set filetype=vim
-autocmd BufEnter .gitconfig* set filetype=gitconfig
-autocmd BufEnter *.cl        set filetype=cpp
+autocmd BufEnter *.pldesc,*.json,*.code-workspace  set filetype=json
+autocmd BufEnter .vimrc*          set filetype=vim
+autocmd BufEnter .gitconfig*      set filetype=gitconfig
+autocmd BufEnter *.cl             set filetype=cpp
+autocmd BufEnter *.pb.ascii       set filetype=conf
 
 " Custom colors for line numbers and cursor
 hi LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
@@ -21,10 +24,20 @@ hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 hi Special term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Red guibg=NONE
 
 " Terminal mode cursor is red
-hi! TermCursorNC guibg=red guifg=white ctermbg=red ctermfg=white
+hi! TermCursorNC guibg=Red guifg=white ctermbg=Red ctermfg=white
 hi! TermCursor guibg=cyan ctermbg=cyan
 
 " Show hidden characters, but not by default
 "set list
-hi NonText guifg=darkblue ctermfg=darkblue
+hi NonText guifg=DarkBlue ctermfg=DarkBlue
 set lcs=tab:>-,trail:-
+
+" Curly quotes are highlighted in pink
+hi! CurlyQuote ctermbg=205 ctermfg=black guibg=hotpink guifg=black
+call matchadd('CurlyQuote', '[‚„‘’“”]')
+
+" Make pop-up menus more readable
+hi Pmenu ctermbg=DarkBlue guibg=DarkBlue
+hi PmenuSel ctermbg=Green guibg=LightGreen
+hi PmenuSbar ctermbg=DarkGray guibg=DarkGray
+hi PmenuThumb ctermbg=Yellow guibg=Yellow

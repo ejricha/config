@@ -23,16 +23,29 @@ set cursorline
 " Allow modeline changes from top of file
 "set modeline
 
-" Spellcheck
+" Function key shortcuts
+" F2 and Shift+F2 cycle through spelling errors
+map <F2> ]s
+map <S-F2> [s
+" F3 (or Shift+F3) shows suggestions
+map <F3> z=
+map <S-F3> z=
+" F12 opens in Google Chrome
+map <F12> :exe ':silent !google-chrome %'<CR>
+
+" Spellcheck is disabled by default
 "set spell
+set spellcapcheck=
+set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
 set spelllang=en
 hi clear Spellbad
-hi SpellBad cterm=underline gui=undercurl ctermfg=lightred ctermbg=black
-" Usage:
-"  zg  :  add word to dict
-"  zug :  remove word from dict
-"  ]s  :  go to next misspelled word
-"  [s  :  go to previous misspelled word
+hi SpellBad cterm=undercurl gui=undercurl ctermfg=lightred ctermbg=darkred
+
+" Highlight non-ascii characters
+" term=standout
+" highlight NonAscii guibg=blue ctermbg=blue
+au BufReadPost * syntax match NonAscii "\w+"
+" "[^\u0000-\u007F]"
 
 " Function to source only if file exists
 " https://devel.tech/snippets/n/vIIMz8vZ/load-vim-source-files-only-if-they-exist/
