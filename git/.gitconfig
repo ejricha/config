@@ -1,5 +1,5 @@
 # ~/.gitconfig
-# 
+#
 # Configuration file for git
 
 [color]
@@ -40,7 +40,7 @@
 [rerere]
 	enabled = 1
 [log]
-	date = format:%Y-%m-%d %H:%M
+	date = format:%Y-%m-%d_%H%Mz
 [format]
 	pretty = tformat:%C(yellow)%h %C(cyan) %ad %C(green) %<(20,trunc)%an %C(reset) %s%C(auto)%d
 [alias]
@@ -76,7 +76,6 @@
 	l = log
 	lg = log --name-status --color=always
 	logfollow = log --follow
-	################
 	lgg = !git logunpushed ${@} && git logpushed -5 ${@}
 	lge = !C=$(git current) && TEXT=\"%C(white bold)\" git logemail ${@}
 	logformat = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
@@ -110,7 +109,8 @@
 	upr = pull --rebase
 	################
 	who = "!f() { W=$1; shift; git log --author=$W $@; }; f"
-	w = !git who
+	w = worktree
+	wt = worktree
 	whoami = config user.email
 	################
 [pull]
@@ -119,9 +119,6 @@
 	default = simple
 [http]
 	sslVerify = true
-[user]
-	email = ejricha+github@gmail.com
-	name = Eric Richardson
 [credential]
 	helper = cache
 [include]
