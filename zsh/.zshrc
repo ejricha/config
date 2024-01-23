@@ -2,6 +2,12 @@
 #
 # Configuration file for zsh
 
+timestamp() {
+    date '+%s%N'
+}
+
+TIME_START=`timestamp`
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -16,7 +22,7 @@ HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins
-plugins=(git docker docker-compose globalias zsh-syntax-highlighting fasd zsh-completions)
+plugins=(git docker docker-compose globalias zsh-syntax-highlighting fasd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,21 +56,20 @@ ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=red'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=red,bold'
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=magenta,bold'
 
-# Suggestion colors
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=87'
-
-# Always use a tab size of 4 in the terminal
-#tabs -4
-
-# Don't use more or less
-export PAGER=most
+# Always use a tab size of 2 in the terminal
+tabs -2
 
 # Grep should highlight matches magenta
 export GREP_COLORS="ms=1;35"
 
-# Add to PATH
-PATH+=:~/toolbox/bash:~/toolbox/python
+# Do not move by executing a directory
+unsetopt autocd
+unsetopt AUTO_CD
 
 # Use custom aliases
 source ~/.zsh_aliases
 source ~/.bash_aliases
+
+# Show how long it took to parse this file
+TIME_DELTA=$(((`timestamp` - $TIME_START) / 1000000000.))
+echo "[$TIME_DELTA]"

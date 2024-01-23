@@ -23,7 +23,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN="$YS_VCS_PROMPT_CLEAN"
 local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 
 # Custom date format
-#DATE="%D{%Y-%m-%d %H:%M}"
 DATE="%D{%H:%M:%S}"
 
 # Prompt format:
