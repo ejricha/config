@@ -55,5 +55,8 @@ function! SourceIfExists(file)
 	endif
 endfunction
 
+" Always copy to system clipboard
+set clipboard=unnamedplus
+
 " If there is a custom alias file, source it
 call SourceIfExists("~/.vimrc.custom")

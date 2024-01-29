@@ -76,6 +76,3 @@ command! GB Git blame
 
 " [machakann/vim-swap]
 " g<, g>, gs
-
-" Use the global clipboard
-set clipboard=unnamedplus
