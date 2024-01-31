@@ -18,8 +18,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'sbdchd/neoformat'
 Plug 'lilydjwg/colorizer'
 Plug 'w0rp/ale' " Not in use yet
-"Plug 'tpope/vim-fugitive' " No longer works
-"Plug 'kien/rainbow_parentheses.vim' " Doese does NOT work with CMake
 call plug#end()
 " END
 
@@ -33,7 +31,7 @@ command! GD SignifyHunkDiff
 command! GF SignifyDiff
 command! GU SignifyHunkUndo
 
-" [kien/rainbow_parentheses.vim]
+" [junegunn/rainbow_parentheses.vim]
 command! RB RainbowParentheses!!
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 " Enable automatically on a few filetypes
@@ -45,18 +43,13 @@ augroup END
 " [vim-airline/vim-airline]
 " Fix the Z section of the statusbar
 if !exists('g:airline_section_z')
-	let g:airline_section_z = '%2p%% %3l/%3L:%03c'
+  let g:airline_section_z = '%2p%% %3l/%03L:%03c'
 endif
-
-
-" [zivyangll/git-blame.vim]
-" nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 " [ntpeters/vim-better-whitespace]
 " :{Enable,Disable,Toggle}Whitespace
 " :StripWhitespace
 " :{Enable,Disable,Toggle}StripWhitespaceOnSave
-highlight ExtraWhitespace ctermbg=red
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=1
 let g:strip_only_modified_lines=0
@@ -65,14 +58,3 @@ let g:better_whitespace_verbosity=1
 let g:better_whitespace_filetypes_blacklist=['diff', 'git', 'gitcommit', 'gitsendemail', 'unite', 'qf', 'help']
 nnoremap ]w :NextTrailingWhitespace<CR>
 nnoremap [w :PrevTrailingWhitespace<CR>
-" Without this, it would require:
-"highlight RedundantSpaces ctermbg=red guibg=red
-"match RedundantSpaces /\s\+$/
-":%!clang-format-9 --assume-filename=%
-
-" [tpope/vim-fugitive]
-" :Git blame
-command! GB Git blame
-
-" [machakann/vim-swap]
-" g<, g>, gs

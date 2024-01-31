@@ -6,10 +6,10 @@
 syntax on
 set hlsearch
 set bg=dark
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-"set expandtab
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set nofoldenable
 
 " Enable the mouse
@@ -21,7 +21,7 @@ command! NN set number!
 set cursorline
 
 " Allow modeline changes from top of file
-"set modeline
+set modeline
 
 " Function key shortcuts
 " F2 and Shift+F2 cycle through spelling errors
@@ -36,27 +36,24 @@ map <F12> :exe ':silent !google-chrome %'<CR>
 " Spellcheck is disabled by default
 "set spell
 set spellcapcheck=
-set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
 set spelllang=en
-hi clear Spellbad
-hi SpellBad cterm=undercurl gui=undercurl ctermfg=lightred ctermbg=darkred
+let CustomDictionary=expand("~")."/.config/nvim/spell/en.utf-8.add"
+let &spellfile=CustomDictionary
 
-" Highlight non-ascii characters
-" term=standout
-" highlight NonAscii guibg=blue ctermbg=blue
-au BufReadPost * syntax match NonAscii "\w+"
-" "[^\u0000-\u007F]"
-
-" Function to source only if file exists
-" https://devel.tech/snippets/n/vIIMz8vZ/load-vim-source-files-only-if-they-exist/
-function! SourceIfExists(file)
-	if filereadable(expand(a:file))
-		exe 'source' a:file
-	endif
-endfunction
+" Use standand and personal dictionaries for autocomplete
+let &dictionary=&dictionary.",".CustomDictionary
+set dictionary+=/usr/share/dict/words
+set complete+=k
 
 " Always copy to system clipboard
 set clipboard=unnamedplus
+
+" Function to source only if file exists
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
 
 " If there is a custom alias file, source it
 call SourceIfExists("~/.vimrc.custom")

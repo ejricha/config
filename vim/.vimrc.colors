@@ -2,42 +2,38 @@
 "
 " Custom colors and file extension handling
 
-" Overrides for certain filetypes
-if has("autocmd")
-  autocmd FileType make,cmake   set expandtab ts=2 sts=2 sw=2
-  autocmd FileType zsh,bash,sh  set expandtab ts=2 sts=2 sw=2
-  autocmd FileType vim,json     set expandtab ts=2 sts=2 sw=2
-endif
-
 " Treat file extensions a certain way
-autocmd BufEnter *.pldesc,*.json,*.code-workspace  set filetype=json
-autocmd BufEnter .vimrc*          set filetype=vim
-autocmd BufEnter .gitconfig*      set filetype=gitconfig
-autocmd BufEnter *.cl             set filetype=cpp
-autocmd BufEnter *.pb.ascii       set filetype=conf
+autocmd BufEnter *.pldesc,*.json  set ft=json
+autocmd BufEnter *.code-workspace set ft=json
+autocmd BufEnter .vimrc*          set ft=vim
+autocmd BufEnter .gitconfig*      set ft=gitconfig
+autocmd BufEnter *.cl             set ft=cpp
+autocmd BufEnter *.pb.ascii       set ft=conf
 
 " Custom colors for line numbers and cursor
-hi LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
-hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+hi LineNr cterm=NONE ctermfg=DarkRed
+hi CursorLine cterm=NONE
 
-" Use a bright red for Special
-hi Special term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Red guibg=NONE
-
-" Terminal mode cursor is red
-hi! TermCursorNC guibg=Red guifg=white ctermbg=Red ctermfg=white
-hi! TermCursor guibg=cyan ctermbg=cyan
-
-" Show hidden characters, but not by default
-"set list
-hi NonText guifg=DarkBlue ctermfg=DarkBlue
+" Show hidden characters by default
+set list
 set lcs=tab:>-,trail:-
+hi NonText ctermfg=DarkBlue
 
-" Curly quotes are highlighted in pink
-hi! CurlyQuote ctermbg=205 ctermfg=black guibg=hotpink guifg=black
-call matchadd('CurlyQuote', '[‚„‘’“”]')
+" Spelling errors are underlined and highlighted
+hi SpellBad cterm=undercurl ctermfg=LightRed ctermbg=DarkRed
+
+" Extra whitespace is highlighted
+hi ExtraWhitespace ctermbg=Red
+
+" Unwanted matches are highlighted
+hi Unwanted ctermfg=Black ctermbg=205
+" This is for curly quotes, multiple empty lines, and non-ASCII characters
+call matchadd('Unwanted', '[‚„‘’“”]')
+call matchadd('Unwanted', '\(^\s*$\n\)\{2,}')
+call matchadd('Unwanted', '[^\u0000-\u007F]')
 
 " Make pop-up menus more readable
-hi Pmenu ctermbg=DarkBlue guibg=DarkBlue
-hi PmenuSel ctermbg=Green guibg=LightGreen
-hi PmenuSbar ctermbg=DarkGray guibg=DarkGray
-hi PmenuThumb ctermbg=Yellow guibg=Yellow
+hi Pmenu      ctermfg=Gray  ctermbg=DarkBlue
+hi PmenuSel   ctermfg=Black ctermbg=Green
+hi PmenuSbar                ctermbg=DarkGray
+hi PmenuThumb               ctermbg=Yellow
