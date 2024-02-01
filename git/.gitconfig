@@ -3,123 +3,123 @@
 # Configuration file for git
 
 [color]
-	ui = true
+  ui = true
 [color "branch"]
-	current = green reverse
-	local = green
+  current = green reverse
+  local = green
 [color "diff"]
-	context = white
-	commit = magenta
-	whitespace = yellow bold
-	meta = yellow
-	frag = magenta bold
-	old = red
-	new = cyan bold
+  context = white
+  commit = magenta
+  whitespace = yellow bold
+  meta = yellow
+  frag = magenta bold
+  old = red
+  new = cyan bold
 [color "status"]
-	added = yellow bold
-	changed = green bold
-	untracked = cyan bold
+  added = yellow bold
+  changed = green bold
+  untracked = cyan bold
 [color "decorate"]
-	HEAD = blue bold
-	branch = green bold
-	remoteBranch = magenta bold
-	master = red bold
+  HEAD = blue bold
+  branch = green bold
+  remoteBranch = magenta bold
+  master = red bold
 #	tag = blue bold
 #	stash = blue
 [core]
-	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = ~/.gitignore-rab
-	editor = nvim
-	pager = cat
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = ~/.gitignore-rab
+  editor = nvim
+  pager = cat
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 [stash]
-	pager = less
+  pager = less
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [rerere]
-	enabled = 1
+  enabled = 1
 [log]
-	date = format:%Y-%m-%d_%H%Mz
+  date = format:%Y-%m-%d_%H%Mz
 [format]
-	pretty = tformat:%C(yellow)%h %C(cyan) %ad %C(green) %<(20,trunc)%an %C(reset) %s%C(auto)%d
+  pretty = tformat:%C(yellow)%h %C(cyan) %ad %C(green) %<(20,trunc)%an %C(reset) %s%C(auto)%d
 [alias]
-	################
-	a = add
-	amend = !git add -A && git commit --amend --no-edit # Add to the previous commit
-	################
-	b = blame
-	be = blame -e
-	br = branch
-	################
-	ci = commit
-	commi = commit
-	commt = commit
-	commti = commit
-	m = !git commit -m
-	################
-	co = checkout
-	################
-	current = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
-	################
-	d = diff --color-words='[^[:space:]]'
-	df = diff --color-words='[^[:space:]]'
-	diffunpushed = diff @{u}..
-	################
-	find = log --reverse -G
-	################
-	g = log --graph -20
-	gr = log --graph
-	graph = log --graph --oneline --decorate=short --branches='*'
-	lol = log --graph --color=always
-	################
-	l = log
-	lg = log --name-status --color=always
-	logfollow = log --follow
-	lgg = !git logunpushed ${@} && git logpushed -5 ${@}
-	lge = !C=$(git current) && TEXT=\"%C(white bold)\" git logemail ${@}
-	logformat = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
-	logemail = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(30,trunc)%ae  ${TEXT}%s%C(reset)%C(auto)%d\"
-	logpushed = !C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}
-	logunpushed = !C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD
-	################
-	mg = merge --no-ff # Don't do fast-forward merges
-	################
-	patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
-	################
-	pend = cherry -v origin/master # Show pending changes to master branch
-	################
-	praise = blame -e
-	pr = praise
-	p = praise
-	################
-	r = remote -v
-	################
-	reorder = "!GIT_SEQUENCE_EDITOR=\"sed -i -n 'h;1n;2p;g;p'\" git rebase -i HEAD~2" # Reorder the last two commits
-	################
-	s = status
-	stats = status
-	statsu = status
-	statu = status
-	st = status -sb
-	################
-	sh = show --color=always
-	################
-	up = pull
-	upr = pull --rebase
-	################
-	who = "!f() { W=$1; shift; git log --author=$W $@; }; f"
-	w = worktree
-	wt = worktree
-	whoami = config user.email
-	################
+  ################
+  a = add
+  amend = !git add -A && git commit --amend --no-edit # Add to the previous commit
+  ################
+  b = blame
+  be = blame -e
+  br = branch
+  ################
+  ci = commit
+  commi = commit
+  commt = commit
+  commti = commit
+  m = !git commit -m
+  ################
+  co = checkout
+  ################
+  current = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
+  ################
+  d = diff --color-words='[^[:space:]]'
+  df = diff --color-words='[^[:space:]]'
+  diffunpushed = diff @{u}..
+  ################
+  find = log --reverse -G
+  ################
+  g = log --graph -20
+  gr = log --graph
+  graph = log --graph --oneline --decorate=short --branches='*'
+  lol = log --graph --color=always
+  ################
+  l = log
+  lg = log --name-status --color=always
+  logfollow = log --follow
+  lgg = !git logunpushed ${@} && git logpushed -5 ${@}
+  lge = !C=$(git current) && TEXT=\"%C(white bold)\" git logemail ${@}
+  logformat = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
+  logemail = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(30,trunc)%ae  ${TEXT}%s%C(reset)%C(auto)%d\"
+  logpushed = !C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}
+  logunpushed = !C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD
+  ################
+  mg = merge --no-ff # Don't do fast-forward merges
+  ################
+  patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
+  ################
+  pend = cherry -v origin/master # Show pending changes to master branch
+  ################
+  praise = blame -e
+  pr = praise
+  p = praise
+  ################
+  r = remote -v
+  ################
+  reorder = "!GIT_SEQUENCE_EDITOR=\"sed -i -n 'h;1n;2p;g;p'\" git rebase -i HEAD~2" # Reorder the last two commits
+  ################
+  s = status
+  stats = status
+  statsu = status
+  statu = status
+  st = status -sb
+  ################
+  sh = show --color=always
+  ################
+  up = pull
+  upr = pull --rebase
+  ################
+  who = "!f() { W=$1; shift; git log --author=$W $@; }; f"
+  w = worktree
+  wt = worktree
+  whoami = config user.email
+  ################
 [pull]
-	rebase = false
+  rebase = false
 [push]
-	default = simple
+  default = simple
 [http]
-	sslVerify = true
+  sslVerify = true
 [credential]
-	helper = cache
+  helper = cache
 [include]
-	path = ~/.gitconfig.custom
+  path = ~/.gitconfig.custom
