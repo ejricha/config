@@ -3,7 +3,7 @@
 # Configuration file for zsh
 
 timestamp() {
-    date '+%s%N'
+  date '+%s%N'
 }
 
 TIME_START=`timestamp`

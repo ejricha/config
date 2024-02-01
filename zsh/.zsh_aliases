@@ -31,11 +31,11 @@ alias -s {txt,log}=vim # Open files with vim
 
 # Expand certain aliases
 globalias() {
-	if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
-		zle _expand_alias
-		zle expand-word
-	fi
-	zle self-insert
+  if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+    zle _expand_alias
+    zle expand-word
+  fi
+  zle self-insert
 }
 bindkey " " magic-space # no completion by default
 bindkey "^ " globalias # expand aliases with Ctrl-Space
@@ -55,10 +55,10 @@ alias df='df -x"squashfs"'
 
 # Sleep until the top of the minute
 SLEEP() {
-	T=60;
-	if [[ $# -gt 0 ]];
-	then
-		T=$1;
-	fi;
-	sleep $(($T - $(date +%S) ));
+  T=60;
+  if [[ $# -gt 0 ]];
+  then
+    T=$1;
+  fi;
+  sleep $(($T - $(date +%S) ));
 }
