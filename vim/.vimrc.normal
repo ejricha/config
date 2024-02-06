@@ -33,8 +33,8 @@ map <S-F3> z=
 " F12 opens in Google Chrome
 map <F12> :exe ':silent !google-chrome %'<CR>
 
-" Spellcheck is disabled by default
-"set spell
+" Spellcheck is enabled by default
+set spell
 set spellcapcheck=
 set spelllang=en
 let CustomDictionary=expand("~")."/.config/nvim/spell/en.utf-8.add"
