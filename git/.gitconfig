@@ -8,13 +8,13 @@
   current = green reverse
   local = green
 [color "diff"]
-  context = white
   commit = magenta
-  whitespace = yellow bold
-  meta = yellow
+  context = white
   frag = magenta bold
-  old = red
+  meta = yellow
   new = cyan bold
+  old = red
+  whitespace = yellow bold
 [color "status"]
   added = yellow bold
   changed = green bold
@@ -22,15 +22,13 @@
 [color "decorate"]
   HEAD = blue bold
   branch = green bold
-  remoteBranch = magenta bold
   master = red bold
-#	tag = blue bold
-#	stash = blue
+  remoteBranch = magenta bold
 [core]
-  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  excludesfile = ~/.gitignore-rab
   editor = nvim
+  excludesfile = ~/.gitexclude
   pager = cat
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [merge]
   tool = vimdiff
 [stash]
@@ -40,79 +38,49 @@
 [rerere]
   enabled = 1
 [log]
-  date = format:%Y-%m-%d_%H%Mz
+  date = iso-local
 [format]
   pretty = tformat:%C(yellow)%h %C(cyan) %ad %C(green) %<(20,trunc)%an %C(reset) %s%C(auto)%d
 [alias]
-  ################
   a = add
-  amend = !git add -A && git commit --amend --no-edit # Add to the previous commit
-  ################
+  amend = !git add -A && git commit --amend --no-edit
   b = blame
   be = blame -e
   br = branch
-  ################
   ci = commit
-  commi = commit
-  commt = commit
-  commti = commit
-  m = !git commit -m
-  ################
   co = checkout
-  ################
   current = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
-  ################
   d = diff --color-words='[^[:space:]]'
-  df = diff --color-words='[^[:space:]]'
   diffunpushed = diff @{u}..
-  ################
   find = log --reverse -G
-  ################
   g = log --graph -20
   gr = log --graph
   graph = log --graph --oneline --decorate=short --branches='*'
-  lol = log --graph --color=always
-  ################
   l = log
   lg = log --name-status --color=always
-  logfollow = log --follow
-  lgg = !git logunpushed ${@} && git logpushed -5 ${@}
   lge = !C=$(git current) && TEXT=\"%C(white bold)\" git logemail ${@}
-  logformat = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
+  lgg = !git logunpushed ${@} && git logpushed -5 ${@}
   logemail = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(30,trunc)%ae  ${TEXT}%s%C(reset)%C(auto)%d\"
+  logfollow = log --follow
+  logformat = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
   logpushed = !C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}
   logunpushed = !C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD
-  ################
+  lol = log --graph --color=always
+  m = !git commit -m
   mg = merge --no-ff # Don't do fast-forward merges
-  ################
   patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
-  ################
   pend = cherry -v origin/master # Show pending changes to master branch
-  ################
   praise = blame -e
-  pr = praise
-  p = praise
-  ################
   r = remote -v
-  ################
   reorder = "!GIT_SEQUENCE_EDITOR=\"sed -i -n 'h;1n;2p;g;p'\" git rebase -i HEAD~2" # Reorder the last two commits
-  ################
   s = status
-  stats = status
-  statsu = status
-  statu = status
-  st = status -sb
-  ################
   sh = show --color=always
-  ################
+  st = status -sb
   up = pull
   upr = pull --rebase
-  ################
   who = "!f() { W=$1; shift; git log --author=$W $@; }; f"
-  w = worktree
-  wt = worktree
   whoami = config user.email
-  ################
+  wt = worktree
 [pull]
   rebase = false
 [push]

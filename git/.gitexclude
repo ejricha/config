@@ -1,0 +1,6 @@
+# ~/.gitexclude
+#
+# Exclusions to apply to all git repos
+
+*.orig
+*.bak

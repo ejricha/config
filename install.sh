@@ -41,6 +41,7 @@ install_packages() {
 fix_all_links() {
   echo "[git]"
   create_link $DIR/git/.gitconfig ~/
+  create_link $DIR/git/.gitexclude ~/
   echo
 
   echo "[zsh]"
