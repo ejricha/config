@@ -11,6 +11,11 @@ Plug 'pboettch/vim-cmake-syntax'
 Plug 'yegappan/mru' " Most-Recently-Used
 Plug 'vim-airline/vim-airline' " Status line awesome
 Plug 'machakann/vim-swap' " Swap values around commas
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'junegunn/fzf' " Multi-entry selection UI
 Plug 'Mizuchi/STL-Syntax'
 Plug 'neovim/pynvim'
 Plug 'ntpeters/vim-better-whitespace'

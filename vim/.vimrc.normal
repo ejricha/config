@@ -30,6 +30,8 @@ map <S-F2> [s
 " F3 (or Shift+F3) shows suggestions
 map <F3> z=
 map <S-F3> z=
+" F7 sorts the current paragraph
+map <F7> vip:sort<CR>
 " F12 opens in Google Chrome
 map <F12> :exe ':silent !google-chrome %'<CR>
 
