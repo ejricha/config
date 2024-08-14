@@ -25,6 +25,7 @@ alias efind="find -regextype egrep"
 alias sl="ls"
 alias ll="ls -l --time-style='+%Y-%m-%d %H:%M:%S'"
 alias beep="play -q -n synth 0.3 sin 880"
+alias sort="LC_COLLATE=C sort"
 
 # https://opensource.com/article/18/9/tips-productivity-zsh
 alias -s {txt,log}=vim # Open files with vim
