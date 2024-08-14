@@ -4,25 +4,21 @@
 
 " BEGIN
 call plug#begin('~/.vim/plugged')
-Plug 'mhinz/vim-signify' " Signify (like GitGitter)
-Plug 'vhdirk/vim-cmake' " Lots of cmake improvements
 Plug 'junegunn/rainbow_parentheses.vim' " Rainbow parentheses that works with cmake?
-Plug 'pboettch/vim-cmake-syntax'
-Plug 'yegappan/mru' " Most-Recently-Used
-Plug 'vim-airline/vim-airline' " Status line awesome
 Plug 'machakann/vim-swap' " Swap values around commas
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'junegunn/fzf' " Multi-entry selection UI
-Plug 'Mizuchi/STL-Syntax'
-Plug 'neovim/pynvim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'plasticboy/vim-markdown'
-Plug 'sbdchd/neoformat'
-Plug 'lilydjwg/colorizer'
-Plug 'w0rp/ale' " Not in use yet
+Plug 'mhinz/vim-signify' " Signify (like GitGitter)
+Plug 'ntpeters/vim-better-whitespace' " Strip trailing whitespaces
+Plug 'pboettch/vim-cmake-syntax'
+Plug 'plasticboy/vim-markdown' " Useful for markdown files
+Plug 'vhdirk/vim-cmake' " Lots of cmake improvements
+Plug 'vim-airline/vim-airline' " Status line awesome
+Plug 'yegappan/mru' " Most-Recently-Used
+"Plug 'Mizuchi/STL-Syntax'
+"Plug 'aklt/plantuml-syntax' " Syntax for PlantUML
+"Plug 'junegunn/fzf' " Multi-entry selection UI
+"Plug 'lilydjwg/colorizer'
+"Plug 'neovim/pynvim'
+"Plug 'sbdchd/neoformat'
 call plug#end()
 " END
 

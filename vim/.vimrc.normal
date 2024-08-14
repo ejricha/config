@@ -32,11 +32,19 @@ map <F3> z=
 map <S-F3> z=
 " F7 sorts the current paragraph
 map <F7> vip:sort<CR>
+" Shift+F7 deletes all but the current line
+map <S-F7> YggVGp
+" Shift+F8 finds matching lines
+map <S-F8> 0y$/\V<c-r>"<cr>
 " F12 opens in Google Chrome
 map <F12> :exe ':silent !google-chrome %'<CR>
 
-" Spellcheck is enabled by default
-set spell
+" Search forward/backward but keep cursor at top
+map <A-n> nzt
+map <A-N> Nzt
+
+" Spellcheck is disabled by default
+"set spell
 set spellcapcheck=
 set spelllang=en
 let CustomDictionary=expand("~")."/.config/nvim/spell/en.utf-8.add"
