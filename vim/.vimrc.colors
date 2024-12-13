@@ -9,7 +9,7 @@ autocmd BufEnter .vimrc*          set ft=vim
 autocmd BufEnter .gitconfig*      set ft=gitconfig
 autocmd BufEnter *.cl             set ft=cpp
 autocmd BufEnter *.pb.ascii       set ft=conf
-autocmd BufEnter *.conf           set ft=dosini
+"autocmd BufEnter *.conf           set ft=dosini
 
 " Custom colors for line numbers and cursor
 hi LineNr cterm=NONE ctermfg=DarkRed
@@ -41,6 +41,7 @@ hi MarkdownTime ctermfg=Black ctermbg=DarkCyan
 call matchadd('MarkdownTime', '^## \`\d\d:\d\d\` - .*$')
 hi MarkdownNow  ctermfg=Black ctermbg=Magenta
 call matchadd('MarkdownNow', '^## \*\*NOW\*\*$')
+call matchadd('MarkdownNow', '^# \*.*\*$')
 
 " Make pop-up menus more readable
 hi Pmenu      ctermfg=Gray  ctermbg=DarkBlue
