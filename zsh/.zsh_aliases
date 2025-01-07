@@ -61,5 +61,7 @@ SLEEP() {
   then
     T=$1;
   fi;
-  sleep $(($T - $(date +%S) ));
+  SEC=$(($(date +%S) % $T))
+  DUR=$(($T - $SEC))
+  sleep $DUR
 }
