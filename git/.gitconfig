@@ -58,11 +58,13 @@
   graph = log --graph --oneline --decorate=short --branches='*'
   l = log
   lg = log --name-status --color=always
-  lge = !C=$(git current) && TEXT=\"%C(white bold)\" git logemail ${@}
+  lge = !C=$(git current) && TEXT=\"%C(white bold)\" git logemail -5 ${@}
   lgg = !git logunpushed ${@} && git logpushed -5 ${@}
-  logemail = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(30,trunc)%ae  ${TEXT}%s%C(reset)%C(auto)%d\"
+  lgc = !C=$(git current) && TEXT=\"%C(white bold)\" git logformatcommiter -5 ${C}
+  logemail = !git log --graph --date=format:'%Y-%m-%d_%H%Mz' --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%ae  %C(yellow)%<(20,trunc)%ce  ${TEXT}%s%C(reset)%C(auto)%d\"
   logfollow = log --follow
-  logformat = !git log --graph --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
+  logformat = !git log --graph --date=format-local:'%Y-%m-%d_%H%M' --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
+  logformatcommiter = !git log --graph --date=format-local:'%Y-%m-%d_%H%M' --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(yellow)%<(20,trunc)%cn  ${TEXT}%s%C(reset)%C(auto)%d\"
   logpushed = !C=$(git current) && TEXT=\"%C(white bold)\" git logformat ${C}
   logunpushed = !C=$(git current) && TEXT=\"%C(cyan bold)\" git logformat ${C}..HEAD
   lol = log --graph --color=always
