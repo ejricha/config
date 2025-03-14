@@ -33,7 +33,7 @@ map <S-F3> z=
 " F7 sorts the current paragraph
 map <F7> vip:sort<CR>
 " Shift+F7 deletes all but the current line
-map <S-F7> YggVGp
+map <S-F7> yyggVGp
 " Shift+F8 finds matching lines
 map <S-F8> 0y$/\V<c-r>"<cr>
 " F12 opens in Google Chrome
