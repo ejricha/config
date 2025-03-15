@@ -65,3 +65,5 @@ SLEEP() {
   DUR=$((10#$T - 10#$SEC))
   sleep $DUR
 }
+
+alias C="clear; tmux clear-history"
