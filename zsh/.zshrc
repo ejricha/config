@@ -67,6 +67,12 @@ export GREP_COLORS="ms=1;35"
 unsetopt autocd
 unsetopt AUTO_CD
 
+# Add certain directories to the path
+path+=~/.local/bin
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Use custom aliases
 source ~/.zsh_aliases
 source ~/.bash_aliases
