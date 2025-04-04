@@ -11,7 +11,8 @@ TIME_START=`timestamp`
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="volta"
+ZSH_THEME="eric"
+#ZSH_THEME="volta"
 #ZSH_THEME="random"
 #ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "spaceship" )
 
@@ -22,7 +23,7 @@ HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins
-plugins=(git docker docker-compose globalias zsh-syntax-highlighting fasd)
+plugins=(git docker docker-compose globalias zsh-syntax-highlighting fasd aws)
 
 source $ZSH/oh-my-zsh.sh
 
