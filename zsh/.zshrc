@@ -23,7 +23,7 @@ HYPHEN_INSENSITIVE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins
-plugins=(git docker docker-compose globalias zsh-syntax-highlighting fasd aws)
+plugins=(git docker docker-compose globalias zsh-syntax-highlighting fasd aws fzf-tab virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,16 +67,16 @@ export GREP_COLORS="ms=1;35"
 unsetopt autocd
 unsetopt AUTO_CD
 
-# Add certain directories to the path
-path+=~/.local/bin
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Use custom aliases
 source ~/.zsh_aliases
+source ~/.zsh_aliases.jnj
 source ~/.bash_aliases
 
 # Show how long it took to parse this file
 TIME_DELTA=$(((`timestamp` - $TIME_START) / 1000000000.))
 echo "[$TIME_DELTA]"
+
+# Use fzf, but keep the cursor at the top
+export FZF_DEFAULT_OPTS=--reverse
+bindkey '^I' complete-word
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
