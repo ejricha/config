@@ -43,25 +43,29 @@
   pretty = tformat:%C(yellow)%h %C(cyan) %ad %C(green) %<(20,trunc)%an %C(reset) %s%C(auto)%d
 [alias]
   a = add
+  aliases=!git config -l | grep alias | cut -c 7-
   amend = !git add -A && git commit --amend --no-edit
   b = blame
   be = blame -e
   br = branch
   ci = commit
   co = checkout
+  curr = branch --show-current
   current = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
   d = diff --color-words='[^[:space:]]'
   diffunpushed = diff @{u}..
   find = log --reverse -G
+  fix = commit --fixup HEAD -p
+  fp = format-patch origin
   g = log --graph -20
   gr = log --graph
   graph = log --graph --oneline --decorate=short --branches='*'
   l = log
   lg = log --name-status --color=always
+  lgc = !C=$(git current) && TEXT=\"%C(white bold)\" git logformatcommiter -5 ${C}
   lge = !C=$(git current) && TEXT=\"%C(white bold)\" git logemail -5 ${@}
   lgg = !git logunpushed ${@} && git logpushed -5 ${@}
-  lgc = !C=$(git current) && TEXT=\"%C(white bold)\" git logformatcommiter -5 ${C}
-  logemail = !git log --graph --date=format:'%Y-%m-%d_%H%Mz' --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%ae  %C(yellow)%<(20,trunc)%ce  ${TEXT}%s%C(reset)%C(auto)%d\"
+  logemail = !git log --graph --date=format:'%Y-%m-%d_%H%Mz' --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(30,trunc)%ae  %C(yellow)%<(30,trunc)%ce\n  ${TEXT}%s%C(reset)%C(auto)%d\"
   logfollow = log --follow
   logformat = !git log --graph --date=format-local:'%Y-%m-%d_%H%M' --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(green)%<(20,trunc)%an  ${TEXT}%s%C(reset)%C(auto)%d\"
   logformatcommiter = !git log --graph --date=format-local:'%Y-%m-%d_%H%M' --pretty=\"tformat:%C(yellow)%h  %C(cyan)%ad  %C(yellow)%<(20,trunc)%cn  ${TEXT}%s%C(reset)%C(auto)%d\"
@@ -71,10 +75,9 @@
   m = !git commit -m
   mg = merge --no-ff # Don't do fast-forward merges
   patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
-  pend = cherry -v origin/master # Show pending changes to master branch
+  pend = cherry -v
   praise = blame -e
-  r = remote -v
-  reorder = "!GIT_SEQUENCE_EDITOR=\"sed -i -n 'h;1n;2p;g;p'\" git rebase -i HEAD~2" # Reorder the last two commits
+  r = !count=$(git pend | wc -l) && echo "[$count]" && git rebase --autosquash -i HEAD~$count
   s = status
   sh = show --color=always
   st = status -sb
