@@ -23,18 +23,6 @@ install_packages() {
   clone_repo https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
   clone_repo https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   echo
-
-  echo "[Install the vim plugin manager]"
-  for PLUG in ~/.vim/autoload/plug.vim ~/.local/share/nvim/site/autoload/plug.vim
-  do
-    if [[ ! -e $PLUG ]]
-    then
-      curl -fLo $PLUG --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    else
-      echo "  \"$PLUG\" already exists"
-    fi
-  done
-  echo
 }
 
 # Fix all links on the system
@@ -54,13 +42,9 @@ fix_all_links() {
   create_link $DIR/tmux/.tmux.conf ~/
   echo
 
-  echo "[vim]"
+  echo "[nvim]"
   mkdir -p ~/.config/nvim/
-  create_link $DIR/vim/init.vim ~/.config/nvim/
-  create_link $DIR/vim/.vimrc ~/
-  create_link $DIR/vim/.vimrc.colors ~/
-  create_link $DIR/vim/.vimrc.normal ~/
-  create_link $DIR/vim/.vimrc.plugged ~/
+  create_link $DIR/nvim/ ~/.config/nvim
   echo
 }
 
