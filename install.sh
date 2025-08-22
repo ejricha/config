@@ -66,60 +66,60 @@ fix_all_links() {
 
 # Check a single link, and back it up and fix it if it is not correct
 create_link() {
-  TO=$1
-  D=${2%/}
-  F=`basename $TO`
-  FROM=$D/$F
+  to=$1
+  d=${2%/}
+  f=`basename $to`
+  from=$d/$f
 
   # Check to see if we need to create the link
-  if [[ -h "$FROM" ]] # Link
+  if [[ -h "$from" ]] # Link
   then
-    if [[ `readlink "$FROM"` == $TO ]]
+    if [[ `readlink "$from"` == $to ]]
     then
-      echo "  \"$FROM\" is already up-to-date"
+      echo "  \"$from\" is already up-to-date"
       return
     fi
-    backup_file $FROM
-  elif [[ -f "$FROM" ]] # Regular file
+    backup_file $from
+  elif [[ -f "$from" ]] # Regular file
   then
-    backup_file $FROM
+    backup_file $from
   fi
 
-  if [[ -e "$FROM" ]] # Unknown file type
+  if [[ -e "$from" ]] # Unknown file type
   then
-    echo "  \"$FROM\" exists still!"
+    echo "  \"$from\" exists still!"
     return
   fi
 
   # Make the link
-  ln -s $TO $D/
-  if [[ -h "$FROM" && `readlink "$FROM"` == $TO ]]
+  ln -s $to $d/
+  if [[ -h "$from" && `readlink "$from"` == $to ]]
   then
-    echo "  \"$FROM\" linked to $TO"
+    echo "  \"$from\" linked to $to"
   else
-    echo "  \"$FROM\" FAILED TO LINK TO $TO"
+    echo "  \"$from\" FAILED TO LINK TO $to"
   fi
 }
 
 # Back up a given file
 backup_file() {
-  FROM=$1
-  FROM_BAK=$FROM.$DATETIME.bak
-  echo "  \"$FROM_BAK\" backup created"
-  mv $FROM $FROM_BAK
+  from=$1
+  backup=$from.$DATETIME.bak
+  echo "  \"$backup\" backup created"
+  mv $from $backup
 }
 
 # Clone a given repo
 clone_repo() {
-  TO=$1
-  FROM=$2
-  echo "  ($FROM to $TO)"
-  if [[ -d "$FROM" ]]
+  to=$1
+  from=$2
+  echo "  ($from to $to)"
+  if [[ -d "$from" ]]
   then
-    (cd $FROM && git pull)
+    (cd $from && git pull)
   else
-    echo git clone $TO $FROM
-    git clone $TO $FROM
+    echo git clone $to $from
+    git clone $to $from
   fi
 }
 
