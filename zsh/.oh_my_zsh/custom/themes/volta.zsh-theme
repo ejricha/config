@@ -36,10 +36,10 @@ DATE="%D{%H:%M:%S}"
 # $
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-[%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n)\
+[%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}$USER)\
 %{$fg[white]%}@\
 %{$fg[green]%}%m\
-%{$fg[white]%}:\
+%{$fg[white]%}: \
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}]\
 ${git_info}\
  \
