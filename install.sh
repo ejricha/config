@@ -4,6 +4,8 @@
 PACKAGES="git zsh tmux neovim ssh rsync curl htop"
 DIR=`dirname $(realpath $0)`
 DATETIME=`date +%Y-%m-%d_%H%M%S`
+DIR_ZSH="~/.oh_my_zsh"
+DIR_ZSH_PLUGINS="$DIR_ZSH/custom/plugins"
 
 # Main function
 main() {
@@ -19,8 +21,10 @@ install_packages() {
   echo
 
   echo "[Clone a few git repos]"
-  clone_repo https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-  clone_repo https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  clone_repo https://github.com/robbyrussell/oh-my-zsh.git $DIR_ZSH
+  clone_repo https://github.com/zsh-users/zsh-syntax-highlighting.git $DIR_ZSH_PLUGINS/zsh-syntax-highlighting
+  clone_repo https://github.com/Aloxaf/fzf-tab $DIR_ZSH_PLUGINS/fzf-tab
+
   clone_repo https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   echo
 }
@@ -43,7 +47,6 @@ fix_all_links() {
   echo
 
   echo "[nvim]"
-  mkdir -p ~/.config/nvim/
   create_link $DIR/nvim/ ~/.config/nvim
   echo
 }
