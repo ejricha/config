@@ -66,7 +66,6 @@ unsetopt AUTO_CD
 
 # Use custom aliases
 source ~/.zsh_aliases
-source ~/.zsh_aliases.jnj
 source ~/.bash_aliases
 
 # Overrides for vi-mode
