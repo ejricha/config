@@ -11,7 +11,7 @@ return {
     enabled = vim.g.enabled_plugins,
     build = { ":TSUpdate", ":TSInstall regex" },
     opts = {
-      -- A list of parser names, or "all" (the five listed parsers should always be installed)
+      -- Parse many file types
       ensure_installed = {
         "bash",
         "c",

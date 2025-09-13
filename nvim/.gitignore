@@ -1,0 +1,4 @@
+*.bak
+/lazy-lock.json
+/spell/*.spl
+/undo/

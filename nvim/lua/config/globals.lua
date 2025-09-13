@@ -9,3 +9,6 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Globally control plugins
 vim.g.enabled_plugins = true
+
+-- Do not override my tab settings
+vim.g.markdown_recommended_style = false

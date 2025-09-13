@@ -3,11 +3,9 @@
 -- Default colorscheme
 -- vim.cmd.colorscheme("vim") -- Old vim's colors
 vim.cmd.colorscheme("default")
--- vim.cmd.colorscheme("gruvbox")
-vim.api.nvim_set_hl(0, "Normal", { bg = "black" })
 
--- Make background color pure black
-vim.api.nvim_set_hl(0, "Normal", { bg = "black" })
+-- Make background color match the terminal
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 
 -- Custom colors for line numbers and cursor
 -- Method 1:
