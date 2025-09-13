@@ -12,18 +12,15 @@ TIME_START=`timestamp`
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="eric"
-#ZSH_THEME="volta"
-#ZSH_THEME="random"
-#ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "spaceship" )
 
 # Some custom zsh settings
-CASE_SENSITIVE="true"
-HYPHEN_INSENSITIVE="true"
-# COMPLETION_WAITING_DOTS="true"
+CASE_SENSITIVE=true
+HYPHEN_INSENSITIVE=true
+COMPLETION_WAITING_DOTS=true
 HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins
-plugins=(git docker docker-compose globalias zsh-syntax-highlighting fasd aws fzf-tab virtualenv)
+plugins=(git docker docker-compose zsh-syntax-highlighting fasd aws fzf-tab virtualenv vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -72,11 +69,19 @@ source ~/.zsh_aliases
 source ~/.zsh_aliases.jnj
 source ~/.bash_aliases
 
-# Show how long it took to parse this file
-TIME_DELTA=$(((`timestamp` - $TIME_START) / 1000000000.))
-echo "[$TIME_DELTA]"
+# Overrides for vi-mode
+VI_MODE_SET_CURSOR=true
+export VI_MODE_CURSOR_INSERT=5
+MODE_INDICATOR="%F{blue}(vi-mode: \`vv\` to edit in vim)%f\n$ "
+bindkey -M viins "\e." insert-last-word
+bindkey '^[^?' backward-kill-word
+bindkey '^W' backward-kill-word
 
 # Use fzf, but keep the cursor at the top
 export FZF_DEFAULT_OPTS=--reverse
 bindkey '^I' complete-word
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Show how long it took to parse this file
+TIME_DELTA=$(((`timestamp` - $TIME_START) / 1000000000.))
+echo "<$TIME_DELTA>"

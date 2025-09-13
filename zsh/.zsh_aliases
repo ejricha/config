@@ -6,7 +6,6 @@
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
-alias ssh='TERM=xterm-256color ssh'
 
 # Source or edit config file
 alias SZ="exec zsh"
@@ -17,40 +16,19 @@ alias D="gio open"
 alias o="gio open"
 alias g="git"
 alias gc="google-chrome"
-alias estyle="astyle --style=break --indent=tab --pad-oper --pad-header"
 alias gdiff="git diff --no-prefix -w"
 alias gdiffw="git diff --no-prefix -w --word-diff=color"
 alias egrep="grep -E"
 alias efind="find -regextype egrep"
-alias sl="ls"
 alias ll="ls -l --time-style='+%Y-%m-%d %H:%M:%S'"
 alias beep="play -q -n synth 0.3 sin 880"
 alias sort="LC_COLLATE=C sort"
 
-# https://opensource.com/article/18/9/tips-productivity-zsh
-alias -s {txt,log}=vim # Open files with vim
-
-# Expand certain aliases
-globalias() {
-  if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
-    zle _expand_alias
-    zle expand-word
-  fi
-  zle self-insert
-}
-bindkey " " magic-space # no completion by default
-bindkey "^ " globalias # expand aliases with Ctrl-Space
-
-# Disable shell rerseved words
-#disable -r time # Use time -p instead
-
 # Global aliases
-alias -g Fn="find . -name"
-alias -g Fi="find . -iname"
-alias -g Ge="| grep -E"
-alias -g Gi="| grep -iE"
-alias -g Gr="grep -IrE"
 alias -g TODAY=`date +%Y-%m-%d`
+now() {
+  date +%Y-%m-%d_%H%M%S
+}
 
 alias df='df -x"squashfs"'
 
@@ -65,5 +43,4 @@ SLEEP() {
   DUR=$((10#$T - 10#$SEC))
   sleep $DUR
 }
-
 alias C="clear; tmux clear-history"
