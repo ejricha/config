@@ -1,4 +1,6 @@
+P_COMMENT="$fg[blue]#$reset_color"
 P_TIME="$fg[blue][%D{%Y-%m-%d} $fg[green]%D{%H:%M:%S}$fg[blue]]$reset_color"
+P_HOST="$fg[blue]on %m$reset_color"
 if [[ -z $VIRTUAL_ENV ]] then
   P_VENV=""
 else
@@ -7,8 +9,8 @@ fi
 P_PATH="%{$fg[yellow]%}%~%{$reset_color%}"
 P_USER="%{$fg[blue]%}$ %{$reset_color%}"
 PROMPT=$'\
-$P_TIME$P_VENV\
-$P_PATH$(git_prompt_info)$(aws_prompt_info)\
+$P_COMMENT $P_TIME $P_HOST$P_VENV\
+$P_COMMENT $P_PATH$(git_prompt_info)$(aws_prompt_info)\
 $P_USER'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}("

@@ -96,7 +96,6 @@ fix_all_links() {
   echo "[zsh]"
   create_link $DIR/zsh/.zshrc $HOME/
   create_link $DIR/zsh/.zsh_aliases $HOME/
-  create_link $DIR/zsh/.oh_my_zsh/custom/themes/gavin.zsh-theme $DIR_ZSH/custom/themes/
   create_link $DIR/zsh/.oh_my_zsh/custom/themes/eric.zsh-theme $DIR_ZSH/custom/themes/
   echo
 
