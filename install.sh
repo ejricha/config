@@ -9,6 +9,7 @@ DIR_ZSH_PLUGINS="$DIR_ZSH/custom/plugins"
 DIR_TMUX="$HOME/.tmux"
 DIR_TMUX_TPM="$HOME/.tmux/plugins/tpm"
 DIR_CONFIG="$HOME/.config"
+DIR_KITTY="$DIR_CONFIG/kitty/"
 
 # Main function
 main() {
@@ -23,7 +24,6 @@ install_packages() {
   sudo apt install $PACKAGES
   echo
 
-   
   echo "[Install kitty]"
   install_kitty
   echo
@@ -106,6 +106,11 @@ fix_all_links() {
 
   echo "[nvim]"
   create_link $DIR/nvim/ $DIR_CONFIG/
+  echo
+
+  echo "[kitty]"
+  create_link $DIR/kitty/kitty.conf $DIR_KITTY
+  create_link $DIR/kitty/theme.conf $DIR_KITTY
   echo
 }
 
