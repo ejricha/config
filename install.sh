@@ -8,7 +8,7 @@ DIR_ZSH="$HOME/.oh-my-zsh"
 DIR_ZSH_PLUGINS="$DIR_ZSH/custom/plugins"
 DIR_TMUX="$HOME/.tmux"
 DIR_TMUX_TPM="$HOME/.tmux/plugins/tpm"
-DIR_NVIM_CONFIG="$HOME/.config/nvim"
+DIR_CONFIG="$HOME/.config"
 
 # Main function
 main() {
@@ -105,7 +105,7 @@ fix_all_links() {
   echo
 
   echo "[nvim]"
-  create_link $DIR/nvim/ $DIR_NVIM_CONFIG/
+  create_link $DIR/nvim/ $DIR_CONFIG/
   echo
 }
 
