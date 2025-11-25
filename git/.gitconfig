@@ -54,6 +54,7 @@
   current = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
   d = diff --color-words='[^[:space:]]'
   diffunpushed = diff @{u}..
+  f = !count=$(git pend | wc -l) && echo "[$count commits]" && git format-patch HEAD~$count
   find = log --reverse -G
   fix = commit --fixup HEAD -p
   fp = format-patch origin
@@ -77,7 +78,7 @@
   patch = am --reject --ignore-whitespace -i # Apply patch, ignoring whitespace
   pend = cherry -v
   praise = blame -e
-  r = !count=$(git pend | wc -l) && echo "[$count]" && git rebase --autosquash -i HEAD~$count
+  r = !count=$(git pend | wc -l) && echo "[$count commits]" && git rebase --autosquash -i HEAD~$count
   s = status
   sh = show --color=always
   st = status -sb
