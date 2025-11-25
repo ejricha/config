@@ -7,7 +7,7 @@ local utils = require("config.utils")
 -- local xnoremap = utils.xnoremap
 
 -- U for redo
-utils.nnoremap("U", "<C-r>", { desc = "Redo (paired with undo)" })
+-- utils.nnoremap("U", "<C-r>", { desc = "Redo (paired with undo)" })
 
 -- Spelling
 utils.nnoremap("<F3>", "z=", { desc = "Show spelling suggestions" })
