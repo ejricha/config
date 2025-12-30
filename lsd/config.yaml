@@ -1,0 +1,37 @@
+blocks:
+  - permission
+  # - user
+  # - group
+  - size
+  - date
+  - name
+
+color:
+  when: auto
+
+date: '+%Y-%m-%d %H:%M:%S'  # or date
+
+dereference: false
+
+icons:
+  when: auto
+  theme: fancy
+  separator: " "
+
+ignore-globs:
+  - .git
+
+indicators: true
+
+size: short  # or default, bytes
+
+# hyperlink: never  # or always, auto
+hyperlink: always
+
+header: false
+
+literal: false
+
+truncate-owner:
+  after: 10
+  marker: "~"
