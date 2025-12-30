@@ -6,9 +6,10 @@
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+alias nano="nvim"
 
 # Source or edit config file
-alias SZ="exec zsh"
+alias SZ="source ~/.zshrc"
 alias VZ="vim ~/.zshrc"
 
 # Other aliases
@@ -20,9 +21,13 @@ alias gdiff="git diff --no-prefix -w"
 alias gdiffw="git diff --no-prefix -w --word-diff=color"
 alias egrep="grep -E"
 alias efind="find -regextype egrep"
-alias ll="ls -l --time-style='+%Y-%m-%d %H:%M:%S'"
+alias ls="lsd"
+alias la="ls -a"
+alias ll="ls -al"
+alias lt="ls --tree"
 alias beep="play -q -n synth 0.3 sin 880"
 alias sort="LC_COLLATE=C sort"
+alias fd="fdfind"
 
 # Global aliases
 alias -g TODAY=`date +%Y-%m-%d`

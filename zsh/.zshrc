@@ -2,24 +2,9 @@
 #
 # Configuration file for zsh
 
-timestamp() {
-  date '+%s%N'
-}
-
-TIME_START=`timestamp`
-
-# Path to your oh-my-zsh installation.
+# Settings for oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="eric"
-
-# Some custom zsh settings
-CASE_SENSITIVE=true
-HYPHEN_INSENSITIVE=true
-COMPLETION_WAITING_DOTS=true
-HIST_STAMPS="yyyy-mm-dd"
-
-# Plugins
 plugins=(
   vi-mode
   zsh-syntax-highlighting
@@ -27,25 +12,19 @@ plugins=(
   virtualenv
   aws
   fzf-tab
-  sudo
   web-search
 )
-
 source $ZSH/oh-my-zsh.sh
-
-# ==================
-# User configuration
-# ==================
 
 # Fix middle-of-word completion
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 
-# No, I don't want to share history between terminals,
-#  and I like the trailing directory slash
+# Do not share history between terminals
 setopt no_share_history
+
+# Do not remove the trailing directory slash
 setopt no_auto_remove_slash
-ZLE_REMOVE_SUFFIX_CHARS=""
 
 # Change some highlighting
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -71,10 +50,6 @@ export GREP_COLORS="ms=1;35"
 unsetopt autocd
 unsetopt AUTO_CD
 
-# Use custom aliases
-source ~/.zsh_aliases
-source ~/.bash_aliases
-
 # Overrides for vi-mode
 VI_MODE_SET_CURSOR=true
 export VI_MODE_CURSOR_INSERT=5
@@ -83,11 +58,15 @@ bindkey -M viins "\e." insert-last-word
 bindkey '^[^?' backward-kill-word
 bindkey '^W' backward-kill-word
 
-# Use fzf, but keep the cursor at the top
-export FZF_DEFAULT_OPTS=--reverse
+# Use fzf, with some sensible options
+export FZF_DEFAULT_OPTS="--reverse"
+export FZF_CTRL_R_OPTS='--bind "ctrl-c:become:echo {q}"'
 bindkey '^I' complete-word
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Show how long it took to parse this file
-TIME_DELTA=$(((`timestamp` - $TIME_START) / 1000000000.))
-echo "<$TIME_DELTA>"
+# Rust uses cargo
+. ~/.cargo/env
+
+# Use custom aliases
+source ~/.zsh_aliases
+source ~/.bash_aliases
