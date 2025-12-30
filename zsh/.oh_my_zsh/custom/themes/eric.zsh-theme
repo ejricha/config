@@ -1,26 +1,22 @@
-P_COMMENT="$fg[blue]#$reset_color"
-P_TIME="$fg[blue][%D{%Y-%m-%d} $fg[green]%D{%H:%M:%S}$fg[blue]]$reset_color"
-P_HOST="$fg[blue]on %m$reset_color"
-if [[ -z $VIRTUAL_ENV ]] then
-  P_VENV=""
-else
-  P_VENV=" (${VIRTUAL_ENV##*/})"
-fi
+P_HOST="$fg[blue][%D{%Y-%m-%d} $fg[green]%D{%H:%M:%S}$fg[blue]] %m"
 P_PATH="%{$fg[yellow]%}%~%{$reset_color%}"
-P_USER="%{$fg[blue]%}$ %{$reset_color%}"
+P_CMD="%{$fg[blue]%}$%{$reset_color%} "
 PROMPT=$'\
-$P_COMMENT $P_TIME $P_HOST$P_VENV\
-$P_COMMENT $P_PATH$(git_prompt_info)$(aws_prompt_info)\
-$P_USER'
+$P_HOST$(aws_prompt_info)$(virtualenv_prompt_info)
+$P_PATH$(git_prompt_info)
+$P_CMD'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
 
-ZSH_THEME_AWS_PROFILE_PREFIX=" %{$bg[white]$bg[magenta]%}<aws:"
+ZSH_THEME_AWS_PROFILE_PREFIX=" %{$fg[black]$bg[magenta]%}<aws:"
 ZSH_THEME_AWS_PROFILE_SUFFIX=">%{$reset_color%}"
-ZSH_THEME_AWS_REGION_PREFIX=" %{$fg[white]$bg[green]%}<region:"
+ZSH_THEME_AWS_REGION_PREFIX=" %{$fg[black]$bg[yellow]%}<region:"
 ZSH_THEME_AWS_REGION_SUFFIX=">%{$reset_color%}"
 ZSH_THEME_AWS_DIVIDER=""
+
+ZSH_THEME_VIRTUALENV_PREFIX=" %{$fg[white]$bg[red]%}["
+ZSH_THEME_VIRTUALENV_SUFFIX="]%{$reset_color%}"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=no
 
