@@ -1,8 +1,7 @@
 return {
   {
     "folke/lazydev.nvim",
-    enabled = true,
-    -- enabled = vim.g.enabled_plugins,
+    enabled = vim.g.enabled_plugins,
     ft = "lua", -- only load on lua files
     opts = {
       library = {

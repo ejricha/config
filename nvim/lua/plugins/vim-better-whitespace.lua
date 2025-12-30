@@ -1,4 +1,4 @@
 return {
   "ntpeters/vim-better-whitespace",
-  enabled = true,
+  enabled = vim.g.enabled_plugins,
 }

@@ -2,5 +2,5 @@
 return {
   "christoomey/vim-tmux-navigator",
   event = "VeryLazy",
-  enabled = true,
+  enabled = vim.g.enabled_plugins,
 }

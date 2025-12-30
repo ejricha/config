@@ -12,6 +12,11 @@ local utils = require("config.utils")
 -- Spelling
 utils.nnoremap("<F3>", "z=", { desc = "Show spelling suggestions" })
 
+-- FZF file finder
+utils.nnoremap("<C-f>", ":<C-u>Files<CR>", { desc = "Find any files" })
+utils.nnoremap("<C-g>", ":<C-u>GFiles<CR>", { desc = "Find files in git repo" })
+-- utils.nnoremap("<C-r>", ":<C-u>Rg<CR>", { desc = "Find files with ripgrep" })
+
 -- Other
 utils.nnoremap("<F7>", "yyggVGp", { desc = "Delete all but the current line" })
 utils.nnoremap("<S-F7>", "vip:sort<CR>", { desc = "Sort the current paragraph" })

@@ -1,4 +1,4 @@
 return {
   "mhinz/vim-signify",
-  enabled = true,
+  enabled = vim.g.enabled_plugins,
 }

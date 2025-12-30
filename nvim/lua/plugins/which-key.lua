@@ -14,7 +14,7 @@ return {
     },
     plugins = {
       spelling = {
-        enabled = true,
+        enabled = vim.g.enabled_plugins,
         suggestions = 3,
       },
       presets = {
